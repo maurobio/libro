@@ -1,0 +1,12 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="libro.png">libro.png</file>
+    <file alias="exit.png">exit.png</file>
+    <file alias="about.png">about.png</file>
+    <file alias="open.png">open.png</file>
+    <file alias="qt.png">qt.png</file>
+</qresource>
+<qresource>
+	<file>Libro_pt_BR.qm</file>
+</qresource>
+</RCC>
