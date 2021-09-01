@@ -11,11 +11,11 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poDesktopCenter
-  LCLVersion = '2.0.4.0'
+  LCLVersion = '2.0.8.0'
   object PageControl: TPageControl
     Left = 0
-    Height = 331
-    Top = 34
+    Height = 333
+    Top = 32
     Width = 774
     ActivePage = ResultsTab
     Align = alClient
@@ -23,11 +23,11 @@ object MainForm: TMainForm
     TabOrder = 0
     object ResultsTab: TTabSheet
       Caption = 'Results'
-      ClientHeight = 303
+      ClientHeight = 305
       ClientWidth = 766
       object HtmlViewer: THtmlViewer
         Left = 0
-        Height = 303
+        Height = 305
         Top = 0
         Width = 766
         BorderStyle = htSingle
@@ -149,7 +149,7 @@ object MainForm: TMainForm
   end
   object CoolBar: TCoolBar
     Left = 0
-    Height = 34
+    Height = 32
     Top = 0
     Width = 774
     AutoSize = True
@@ -163,7 +163,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = CoolBar
       AnchorSideTop.Control = CoolBar
       Left = 24
-      Height = 24
+      Height = 22
       Top = 5
       Width = 503
       Align = alNone
@@ -176,7 +176,7 @@ object MainForm: TMainForm
       object OpenBtn: TToolButton
         Left = 1
         Hint = 'Open|Open file'
-        Top = 2
+        Top = 0
         ImageIndex = 0
         OnClick = FileOpenItemClick
         ParentShowHint = False
@@ -185,7 +185,7 @@ object MainForm: TMainForm
       object SaveBtn: TToolButton
         Left = 24
         Hint = 'Save|Save results to disk'
-        Top = 2
+        Top = 0
         ImageIndex = 1
         OnClick = FileSaveItemClick
         ParentShowHint = False
@@ -194,14 +194,14 @@ object MainForm: TMainForm
       object ToolButton3: TToolButton
         Left = 47
         Height = 22
-        Top = 2
+        Top = 0
         ImageIndex = 2
         Style = tbsSeparator
       end
       object CopyBtn: TToolButton
         Left = 55
         Hint = 'Copy|Copy results to the clipboard'
-        Top = 2
+        Top = 0
         ImageIndex = 2
         OnClick = EditCopyItemClick
         ParentShowHint = False
@@ -210,14 +210,14 @@ object MainForm: TMainForm
       object ToolButton5: TToolButton
         Left = 78
         Height = 22
-        Top = 2
+        Top = 0
         ImageIndex = 3
         Style = tbsSeparator
       end
       object PrintBtn: TToolButton
         Left = 86
         Hint = 'Print|Print results'
-        Top = 2
+        Top = 0
         ImageIndex = 3
         ParentShowHint = False
         ShowHint = True
@@ -225,7 +225,7 @@ object MainForm: TMainForm
       object HelpBtn: TToolButton
         Left = 109
         Hint = 'About|Display information about the program'
-        Top = 2
+        Top = 0
         ImageIndex = 4
         OnClick = HelpAboutItemClick
         ParentShowHint = False
@@ -234,14 +234,14 @@ object MainForm: TMainForm
       object ToolButton8: TToolButton
         Left = 132
         Height = 22
-        Top = 2
+        Top = 0
         ImageIndex = 5
         Style = tbsSeparator
       end
       object ExitBtn: TToolButton
         Left = 140
         Hint = 'Exit|Exit application'
-        Top = 2
+        Top = 0
         ImageIndex = 5
         OnClick = FileExitItemClick
         ParentShowHint = False
@@ -648,23 +648,23 @@ object MainForm: TMainForm
     top = 32
   end
   object YAxisTransformation: TChartAxisTransformations
-    left = 557
-    top = 104
+    left = 584
+    top = 112
     object YAxisLogTransform: TLogarithmAxisTransform
       Base = 10
     end
   end
   object YAxisLabels: TListChartSource
-    left = 592
-    top = 104
+    left = 624
+    top = 112
   end
   object XAxisLabels: TListChartSource
-    left = 632
-    top = 104
+    left = 664
+    top = 112
   end
   object XAxisTransformation: TChartAxisTransformations
-    left = 667
-    top = 104
+    left = 704
+    top = 112
     object XAxisLogTransform: TLogarithmAxisTransform
       Base = 10
     end

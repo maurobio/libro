@@ -37,7 +37,7 @@ interface
 
 uses
     {$IFDEF Windows} Win32Proc, {$ENDIF} FileInfo,
-    Windows, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
+    SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
     Buttons, ExtCtrls, LCLTranslator, LCLVersion, LCLIntf;
 
 type

@@ -9,7 +9,7 @@ uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   FrameViewer09,
   tachartlazaruspkg,
   printer4lazarus,
-  main,
+  Main,
   About { you can add units after this };
 
 {$R *.res}
