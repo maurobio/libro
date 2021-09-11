@@ -1,4 +1,4 @@
-# ![libro](C:\Users\mauro\My Documents\Downloads\libro\libro.jpg)libro
+# <img src="python\images\libro.png" alt="Libro" style="zoom:150%;"/> Libro
  A cross-platform program for statistical analysis of texts, using Shannon-Weaver information theory, Zipf power law function, and readability tests
 
 **Libro** is a cross-platform text analysis program written in Python and Free Pascal/Lazarus which scans a whole text file (in plain text, HTML, EPUB, or ODT formats) and ranks all used words according to frequency, performing a quantitative analysis of the text using Shannon-Weaver information statistic and Zipf power law function. It counts words, chars, spaces, and syllables. Also computes readability indexes (Gunning Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease).
