@@ -27,7 +27,7 @@
 - [Lazarus](http://www.lazarus.freepascal.org/) version 1.6 or later 
 - [HTMLViewer component](http://wiki.lazarus.freepascal.org/THtmlPort) version 11.8 or later 
 - [HistoryFiles component](http://wiki.freepascal.org/HistoryFiles) version 1.3 or later
-- [Vector library](http://torry.net/vcl/science/vector/achvectors.zip) version 050702
+- [Vector library](https://torry.net/files/vcl/science/vector/achvectors.zip) version 050702
 
 ## **Download**
 
