@@ -50,16 +50,16 @@ type
       Website: TLabel;
       VersionNumber: TLabel;
       OperatingSystem: TLabel;
-              Panel1: TPanel;
-              ProgramIcon: TImage;
-              ProductName: TLabel;
-              Version: TLabel;
-              Copyright: TLabel;
-              Comments: TLabel;
-              OKButton: TButton;
-              procedure FormShow(Sender: TObject);
-              procedure LogoClick(Sender: TObject);
-              procedure WebsiteClick(Sender: TObject);
+      Panel1: TPanel;
+      ProgramIcon: TImage;
+      ProductName: TLabel;
+      Version: TLabel;
+      Copyright: TLabel;
+      Comments: TLabel;
+      OKButton: TButton;
+      procedure FormShow(Sender: TObject);
+      procedure LogoClick(Sender: TObject);
+      procedure WebsiteClick(Sender: TObject);
     private
          { Private declarations }
     public

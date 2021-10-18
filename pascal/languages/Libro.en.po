@@ -159,7 +159,7 @@ msgid "Compiler"
 msgstr ""
 
 #: taboutbox.copyright.caption
-msgid "(c) 2013-2019 Mauro J. Cavalcanti"
+msgid "(c) 2013-2021 Mauro J. Cavalcanti"
 msgstr ""
 
 #: taboutbox.okbutton.caption

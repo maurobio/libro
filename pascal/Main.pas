@@ -1,34 +1,33 @@
-{============================================================================}
-{                                Libro                                       }
-{     A cross-platform program for statistical analysis of texts             }
-{   using Shannon-Weaver information theory and Zipf power law function      }
-{   and computation of readability indices (Flesch, Flesch-Kincaid, SMOG,    }
-{      Gunning-Fog, Coleman-Liau, and Automated Readability Index)           }
-{                                                                            }
-{              Copyright 2013-2017 Mauro J. Cavalcanti                       }
-{                        maurobio@gmail.com                                  }
-{                                                                            }
-{   This program is free software: you can redistribute it and/or modify     }
-{   it under the terms of the GNU General Public License as published by     }
-{   the Free Software Foundation, either version 3 of the License, or        }
-{   (at your option) any later version.                                      }
-{                                                                            }
-{   This program is distributed in the hope that it will be useful,          }
-{   but WITHOUT ANY WARRANTY; without even the implied warranty of           }
-{   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            }
-{   GNU General Public License for more details.                             }
-{                                                                            }
-{   You should have received a copy of the GNU General Public License        }
-{   along with this program. If not, see <http://www.gnu.org/licenses/>.     }
-{                                                                            }
-{   Requirements:                                                            }
-{     Lazarus 1.6+ (www.lazarus.freepascal.org)                              }
-{     Free Pascal 3.0+ (www.freepascal.org)                                  }
-{     HTMLViewer 11.8+ (wiki.lazarus.freepascal.org/THtmlPort)               }
-{     HistoryFiles 1.3+ (wiki.freepascal.org/HistoryFiles)                   }
-{     Vector Library 050702+ (torry.net/vcl/science/vector/achvectors.zip)   }
-{                                                                            }
-{============================================================================}
+{==============================================================================}
+{                                Libro                                         }
+{     A cross-platform program for statistical analysis of texts               }
+{   using Shannon-Weaver information theory and Zipf power law function        }
+{   and computation of readability indices (Flesch, Flesch-Kincaid, SMOG,      }
+{      Gunning-Fog, Coleman-Liau, and Automated Readability Index)             }
+{                                                                              }
+{              Copyright 2013-2021 Mauro J. Cavalcanti                         }
+{                        maurobio@gmail.com                                    }
+{                                                                              }
+{   This program is free software: you can redistribute it and/or modify       }
+{   it under the terms of the GNU General Public License as published by       }
+{   the Free Software Foundation, either version 3 of the License, or          }
+{   (at your option) any later version.                                        }
+{                                                                              }
+{   This program is distributed in the hope that it will be useful,            }
+{   but WITHOUT ANY WARRANTY; without even the implied warranty of             }
+{   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              }
+{   GNU General Public License for more details.                               }
+{                                                                              }
+{   You should have received a copy of the GNU General Public License          }
+{   along with this program. If not, see <http://www.gnu.org/licenses/>.       }
+{                                                                              }
+{   Requirements:                                                              }
+{    Lazarus 2.0+ (www.lazarus.freepascal.org)                                 }
+{    Free Pascal 3.0+ (www.freepascal.org)                                     }
+{    HTMLViewer 11.8+ (wiki.lazarus.freepascal.org/THtmlPort)                  }
+{    HistoryFiles 1.3+ (wiki.freepascal.org/HistoryFiles)                      }
+{    Vector Library 050702+ (torry.net/files/vcl/science/vector/achvectors.zip)}
+{==============================================================================}
 unit Main;
 
 {$mode objfpc}{$H+}
@@ -140,9 +139,11 @@ resourcestring
   strCharsPerWord = 'Average number of characters per word:';
   strStatInfo = 'Information Statistic';
   strIndexes = 'Readability Indices';
-  strOpenText = 'Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub';
+  strOpenText =
+    'Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub';
   strSaveText = 'Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html';
-  strSaveImage = 'JPEG files (*.jpg, *.jpeg)|*.jpg;*jpeg|PNG files (*.png)|*.png|Bitmap files (*.bmp)|*.bmp';
+  strSaveImage =
+    'JPEG files (*.jpg, *.jpeg)|*.jpg;*jpeg|PNG files (*.png)|*.png|Bitmap files (*.bmp)|*.bmp';
   strQuit = 'Do you want to exit the program?';
   strNotFound = 'File not found!';
   strConfirmation = 'Confirmation';
@@ -191,31 +192,31 @@ end;
 
 function Syllables(word: string): integer;
 const
-	vowels = ['a','e','i','o','u','y'];
+  vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
 var
-	count, index: integer;
+  Count, index: integer;
 begin
-    count := 0;
-    word := LowerCase(StripChars(word, '.:;?!'));
-	if (Length(word) = 0) then
-	begin
-        count := 0;
-        Result := count;
-	end;
-    if word[1] in vowels then
-        count += 1;
-    for index := 2 to Length(word) do
-	begin
-        if (word[index] in vowels) and not (word[index - 1] in vowels) then
-            count += 1;
-	end;
-    if (RightStr(word, 1) = 'e') then
-        count -= 1;
-    if (RightStr(word, 2) = 'le') then
-        count += 1;
-    if (count = 0) then
-        count += 1;
-    Result := count;
+  Count := 0;
+  word := LowerCase(StripChars(word, '.:;?!'));
+  if (Length(word) = 0) then
+  begin
+    Count := 0;
+    Result := Count;
+  end;
+  if word[1] in vowels then
+    Count += 1;
+  for index := 2 to Length(word) do
+  begin
+    if (word[index] in vowels) and not (word[index - 1] in vowels) then
+      Count += 1;
+  end;
+  if (RightStr(word, 1) = 'e') then
+    Count -= 1;
+  if (RightStr(word, 2) = 'le') then
+    Count += 1;
+  if (Count = 0) then
+    Count += 1;
+  Result := Count;
 end;
 
 function StripHTML(S: string): string;
@@ -310,25 +311,26 @@ begin
       fName := 'LIBRO.$$$';
       UnZipper := TUnZipper.Create;
       try
-         UnZipper.FileName := fileName;
-         UnZipper.OutputPath := '.\tmp';
-         UnZipper.UnZipAllFiles;
-         FileList := FindAllFiles('.\tmp', '*.htm;*.html', True);
-         Files := '';
-         for I := 0 to FileList.Count - 1 do
-              Files := Files + sLineBreak + FileList[I];
-         Result := DeleteDirectory('.\tmp', True);
-         if Result then Result := RemoveDir('.\tmp');
+        UnZipper.FileName := fileName;
+        UnZipper.OutputPath := '.\tmp';
+        UnZipper.UnZipAllFiles;
+        FileList := FindAllFiles('.\tmp', '*.htm;*.html', True);
+        Files := '';
+        for I := 0 to FileList.Count - 1 do
+          Files := Files + sLineBreak + FileList[I];
+        Result := DeleteDirectory('.\tmp', True);
+        if Result then
+          Result := RemoveDir('.\tmp');
       finally
-         UnZipper.Free;
-         FileList.Free;
+        UnZipper.Free;
+        FileList.Free;
       end;
       Exit;
     end
     else
     begin
-      Application.MessageBox(PChar(strInvalidFile), PChar(strError), mb_Ok or
-      mb_IconExclamation);
+      Application.MessageBox(PChar(strInvalidFile), PChar(strError),
+        mb_Ok or mb_IconExclamation);
       Exit;
     end;
   end;
@@ -366,11 +368,11 @@ begin
       begin
         for I := 1 to WordCount(St, Delims) do
         begin
-            SyllableCount := Syllables(ExtractWord(I, St, Delims));
-            NumSyllables += SyllableCount;
+          SyllableCount := Syllables(ExtractWord(I, St, Delims));
+          NumSyllables += SyllableCount;
         end;
         if (SyllableCount >= 3) then
-           Inc(threeOrMore);
+          Inc(threeOrMore);
         NumSentences += Sentences(St);
       end;
     end;
@@ -406,7 +408,7 @@ begin
     Lines := Lines + '</head>' + sLineBreak;
     Lines := Lines + '<body>' + sLineBreak;
     Lines := Lines + '' + sLineBreak;
-    Lines := Lines + '<h2>'+ strtitle + ExtractFileName(fileName) +
+    Lines := Lines + '<h2>' + strtitle + ExtractFileName(fileName) +
       '</h2>' + sLineBreak;
     Lines := Lines + '<table border=1 cellspacing=1 cellpadding=1 width="80%">' +
       sLineBreak;
@@ -452,8 +454,8 @@ begin
     Lines := Lines + '<table>' + sLineBreak;
     Lines := Lines + Concat('<tr><td>', strNumChars, '</td><td>',
       IntToStr(TotalChars), '</td></tr>') + sLineBreak;
-    Lines := Lines + Concat('<tr><td>', strLetterNumberCount, '</td><td>',
-      IntToStr(NumChars), '</td></tr>') + sLineBreak;
+    Lines := Lines + Concat('<tr><td>', strLetterNumberCount,
+      '</td><td>', IntToStr(NumChars), '</td></tr>') + sLineBreak;
     Lines := Lines + Concat('<tr><td>', strNonSpaceCount, '</td><td>',
       IntToStr(NumLetters), '</td></tr>') + sLineBreak;
     Lines := Lines + Concat('<tr><td>', strTotalCount, '</td><td>',
@@ -609,11 +611,22 @@ begin
   sLang := IniFile.ReadString('Options', 'Language', 'en'); // First default is English
   SetDefaultLang(sLang, 'languages', True);
   PageControl.ActivePage := ResultsTab;
+  if sLang = 'en' then
+  begin
+    LanguageEnglishItem.Checked := True;
+    LanguagePortugueseItem.Checked := False;
+  end;
+  if sLang = 'pt-br' then
+  begin
+    LanguageEnglishItem.Checked := False;
+    LanguagePortugueseItem.Checked := True;
+  end;
 end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
 begin
-  if FileExists('LIBRO.$$$') then DeleteFile('LIBRO.$$$');
+  if FileExists('LIBRO.$$$') then
+    DeleteFile('LIBRO.$$$');
   IniFile.Free;
 end;
 
@@ -639,12 +652,16 @@ procedure TMainForm.LanguageEnglishItemClick(Sender: TObject);
 begin
   SetDefaultLang('en', 'language', True);
   IniFile.WriteString('Options', 'Language', 'en');
+  LanguageEnglishItem.Checked := True;
+  LanguagePortugueseItem.Checked := False;
 end;
 
 procedure TMainForm.LanguagePortugueseItemClick(Sender: TObject);
 begin
   SetDefaultLang('pt-br', 'language', True);
   IniFile.WriteString('Options', 'Language', 'pt-br');
+  LanguageEnglishItem.Checked := False;
+  LanguagePortugueseItem.Checked := True;
 end;
 
 procedure TMainForm.FileExitItemClick(Sender: TObject);

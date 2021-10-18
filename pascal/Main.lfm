@@ -11,7 +11,7 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poDesktopCenter
-  LCLVersion = '2.0.8.0'
+  LCLVersion = '2.0.12.0'
   object PageControl: TPageControl
     Left = 0
     Height = 333
@@ -251,8 +251,8 @@ object MainForm: TMainForm
   end
   object MainMenu: TMainMenu
     Images = ImageList
-    left = 592
-    top = 32
+    Left = 592
+    Top = 32
     object FileMenu: TMenuItem
       Caption = '&File'
       object FileOpenItem: TMenuItem
@@ -328,22 +328,22 @@ object MainForm: TMainForm
     Title = 'Open existing file'
     DefaultExt = '.txt'
     Options = [ofFileMustExist, ofEnableSizing, ofViewDetail]
-    left = 632
-    top = 32
+    Left = 632
+    Top = 32
   end
   object SaveDialog: TSaveDialog
     Title = 'Save as'
     DefaultExt = '.txt'
-    left = 667
-    top = 32
+    Left = 667
+    Top = 32
   end
   object PrintDialog: TPrintDialog
-    left = 704
-    top = 32
+    Left = 704
+    Top = 32
   end
   object ImageList: TImageList
-    left = 730
-    top = 32
+    Left = 730
+    Top = 32
     Bitmap = {
       4C69090000001000000010000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000FF000000FF000000FF0000
@@ -644,27 +644,27 @@ object MainForm: TMainForm
     Position = 6
     FileMustExist = True
     OnClickHistoryItem = HistoryFilesClickHistoryItem
-    left = 557
-    top = 32
+    Left = 557
+    Top = 32
   end
   object YAxisTransformation: TChartAxisTransformations
-    left = 584
-    top = 112
+    Left = 584
+    Top = 112
     object YAxisLogTransform: TLogarithmAxisTransform
       Base = 10
     end
   end
   object YAxisLabels: TListChartSource
-    left = 624
-    top = 112
+    Left = 624
+    Top = 112
   end
   object XAxisLabels: TListChartSource
-    left = 664
-    top = 112
+    Left = 664
+    Top = 112
   end
   object XAxisTransformation: TChartAxisTransformations
-    left = 704
-    top = 112
+    Left = 704
+    Top = 112
     object XAxisLogTransform: TLogarithmAxisTransform
       Base = 10
     end
