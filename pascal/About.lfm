@@ -345,7 +345,7 @@ object AboutBox: TAboutBox
       Height = 13
       Top = 59
       Width = 163
-      Caption = '(c) 2013-2021 Mauro J. Cavalcanti'
+      Caption = '(c) 2013-2023 Mauro J. Cavalcanti'
       ParentColor = False
     end
     object Comments: TLabel

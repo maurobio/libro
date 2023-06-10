@@ -2,7 +2,7 @@
 {"hash":4691652,"name":"taboutbox.caption","sourcebytes":[65,98,111,117,116],"value":"About"},
 {"hash":5437839,"name":"taboutbox.productname.caption","sourcebytes":[76,105,98,114,111],"value":"Libro"},
 {"hash":214540302,"name":"taboutbox.version.caption","sourcebytes":[86,101,114,115,105,111,110],"value":"Version"},
-{"hash":63380809,"name":"taboutbox.copyright.caption","sourcebytes":[40,99,41,32,50,48,49,51,45,50,48,49,57,32,77,97,117,114,111,32,74,46,32,67,97,118,97,108,99,97,110,116,105],"value":"(c) 2013-2019 Mauro J. Cavalcanti"},
+{"hash":63390537,"name":"taboutbox.copyright.caption","sourcebytes":[40,99,41,32,50,48,49,51,45,50,48,50,51,32,77,97,117,114,111,32,74,46,32,67,97,118,97,108,99,97,110,116,105],"value":"(c) 2013-2023 Mauro J. Cavalcanti"},
 {"hash":174341140,"name":"taboutbox.comments.caption","sourcebytes":[67,111,109,109,101,110,116],"value":"Comment"},
 {"hash":3347216,"name":"taboutbox.versionnumber.caption","sourcebytes":[48,46,48,46,48],"value":"0.0.0"},
 {"hash":21610,"name":"taboutbox.operatingsystem.caption","sourcebytes":[79,83,58],"value":"OS:"},

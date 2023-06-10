@@ -25,33 +25,35 @@ object MainForm: TMainForm
       Caption = 'Results'
       ClientHeight = 305
       ClientWidth = 766
-      object HtmlViewer: THtmlViewer
+      object HtmlPanel: TIpHtmlPanel
         Left = 0
         Height = 305
         Top = 0
         Width = 766
-        BorderStyle = htSingle
-        DefBackground = clWhite
-        HistoryMaxCount = 0
-        NoSelect = False
-        PrintMarginBottom = 2
-        PrintMarginLeft = 2
-        PrintMarginRight = 2
-        PrintMarginTop = 2
-        PrintScale = 1
-        ScrollBars = ssVertical
         Align = alClient
+        FixedTypeface = 'Courier New'
+        DefaultTypeFace = 'default'
+        DefaultFontSize = 12
+        FlagErrors = False
+        PrintSettings.MarginLeft = 0.5
+        PrintSettings.MarginTop = 0.5
+        PrintSettings.MarginRight = 0.5
+        PrintSettings.MarginBottom = 0.5
+        PrintSettings.Preview.Left = 640
+        PrintSettings.Preview.Top = 270
+        PrintSettings.Preview.Width = 1920
+        PrintSettings.Preview.Height = 810
         TabOrder = 0
         Visible = False
       end
     end
     object PlotTab: TTabSheet
       Caption = 'Plot'
-      ClientHeight = 303
+      ClientHeight = 325
       ClientWidth = 766
       object Chart: TChart
         Left = 0
-        Height = 303
+        Height = 325
         Top = 0
         Width = 766
         AxisList = <        
@@ -177,13 +179,15 @@ object MainForm: TMainForm
         Left = 1
         Hint = 'Open|Open file'
         Top = 0
+        DropdownMenu = RecentFilesPopup
         ImageIndex = 0
         OnClick = FileOpenItemClick
         ParentShowHint = False
         ShowHint = True
+        Style = tbsDropDown
       end
       object SaveBtn: TToolButton
-        Left = 24
+        Left = 36
         Hint = 'Save|Save results to disk'
         Top = 0
         ImageIndex = 1
@@ -192,14 +196,14 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object ToolButton3: TToolButton
-        Left = 47
+        Left = 59
         Height = 22
         Top = 0
         ImageIndex = 2
         Style = tbsSeparator
       end
       object CopyBtn: TToolButton
-        Left = 55
+        Left = 67
         Hint = 'Copy|Copy results to the clipboard'
         Top = 0
         ImageIndex = 2
@@ -208,14 +212,14 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object ToolButton5: TToolButton
-        Left = 78
+        Left = 90
         Height = 22
         Top = 0
         ImageIndex = 3
         Style = tbsSeparator
       end
       object PrintBtn: TToolButton
-        Left = 86
+        Left = 98
         Hint = 'Print|Print results'
         Top = 0
         ImageIndex = 3
@@ -223,7 +227,7 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object HelpBtn: TToolButton
-        Left = 109
+        Left = 121
         Hint = 'About|Display information about the program'
         Top = 0
         ImageIndex = 4
@@ -232,14 +236,14 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object ToolButton8: TToolButton
-        Left = 132
+        Left = 144
         Height = 22
         Top = 0
         ImageIndex = 5
         Style = tbsSeparator
       end
       object ExitBtn: TToolButton
-        Left = 140
+        Left = 152
         Hint = 'Exit|Exit application'
         Top = 0
         ImageIndex = 5
@@ -261,6 +265,9 @@ object MainForm: TMainForm
         ImageIndex = 0
         ShortCut = 16463
         OnClick = FileOpenItemClick
+      end
+      object mnuRecentFiles: TMenuItem
+        Caption = 'Recently used'
       end
       object FileSaveItem: TMenuItem
         Caption = 'Save &As...'
@@ -325,7 +332,6 @@ object MainForm: TMainForm
     end
   end
   object OpenDialog: TOpenDialog
-    Title = 'Open existing file'
     DefaultExt = '.txt'
     Options = [ofFileMustExist, ofEnableSizing, ofViewDetail]
     Left = 632
@@ -636,17 +642,6 @@ object MainForm: TMainForm
       0000000000000000000000000000
     }
   end
-  object HistoryFiles: THistoryFiles
-    IniKey = 'History Files'
-    IniFile = 'History.ini'
-    ParentMenu = FileMenu
-    Separator = sepTop
-    Position = 6
-    FileMustExist = True
-    OnClickHistoryItem = HistoryFilesClickHistoryItem
-    Left = 557
-    Top = 32
-  end
   object YAxisTransformation: TChartAxisTransformations
     Left = 584
     Top = 112
@@ -668,5 +663,9 @@ object MainForm: TMainForm
     object XAxisLogTransform: TLogarithmAxisTransform
       Base = 10
     end
+  end
+  object RecentFilesPopup: TPopupMenu
+    Left = 193
+    Top = 103
   end
 end
