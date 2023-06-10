@@ -14,6 +14,7 @@
 - Other programs and web sites may give different numerical results for the same text that those computed by **Libro**. This occurs because they may use different formulae, but it is more likely that they use different rules for counting sentences or determining what is a syllable. Indeed, results for the same text may differ in **Libro** itself, if computed from source files in different formats (*eg.* plain text, HTML, EPUB, ODT). However, it is not the exact results themselves which are important, but the qualitative interpretations which may be derived from them, on a comparative basis.
 - Support for OpenOffice/LibreOffice format (ODT) is only available in the Python version.
 - The Pascal version only compiles under MS-Windows.
+- Thanks to **wp** from the Lazarus Forum for adding improvements to the code.
 
 ## **Requirements (Python version)**
 
