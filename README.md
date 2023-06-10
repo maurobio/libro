@@ -42,7 +42,7 @@ This program is [free software](https://www.gnu.org/philosophy/free-sw.en.html),
 
 
 
-Sponsored by [rizoma editorial] <img src="images\rizomaeditorial.png" alt="Rizoma Editorial"/>Rizoma Editorial
+Sponsored by <img src="images\rizomaeditorial.png" alt="Rizoma Editorial"/>Rizoma Editorial
 
 Powered by <img src="images\powered_by.png" alt="Lazarus"/>Lazarus/Free Pascal
 
