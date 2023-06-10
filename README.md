@@ -25,7 +25,7 @@
 ## **Requirements (Free Pascal/Lazarus version)**
 
 - [Free Pascal](http://www.freepascal.org/) version 3.0 or later
-- Lazarus](http://www.lazarus.freepascal.org/) version 2.0 or later 
+- [Lazarus](http://www.lazarus.freepascal.org/) version 2.0 or later 
 - [Vector library](https://torry.net/files/vcl/science/vector/achvectors.zip) version 050702
 
 ## **Download**
@@ -42,9 +42,9 @@ This program is [free software](https://www.gnu.org/philosophy/free-sw.en.html),
 
 
 
-Sponsored by ![rizomaeditorial](images\rizomaeditorial.png)
+Sponsored by <img src="images\rizomaeditorial.png" alt="Rizoma Editorial" "/>
 
-Powered by ![powered-by](images\powered-by.png)
+Powered by <img src="images\powered_by.png" alt="Lazarus""/>
 
-Powered by ![python](images\python.png) ![pyqt](images\pyqt.png)
+Powered by <img src="images\python.png" alt="Python""/><img src="images\pyqt.png" alt="PyQt""/>
 
