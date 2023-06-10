@@ -42,9 +42,9 @@ This program is [free software](https://www.gnu.org/philosophy/free-sw.en.html),
 
 
 
-Sponsored by <img src="images\rizomaeditorial.png" alt="Rizoma Editorial" "/>
+Sponsored by [rizoma editorial] <img src="images\rizomaeditorial.png" alt="Rizoma Editorial"/>Rizoma Editorial
 
-Powered by <img src="images\powered_by.png" alt="Lazarus""/>
+Powered by <img src="images\powered_by.png" alt="Lazarus"/>Lazarus/Free Pascal
 
-Powered by <img src="images\python.png" alt="Python""/><img src="images\pyqt.png" alt="PyQt""/>
+Powered by <img src="images\python.png" alt="Python"/>Python <img src="images\pyqt.png" alt="PyQt"/>PyQt
 
