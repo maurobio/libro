@@ -267,7 +267,7 @@ object MainForm: TMainForm
         OnClick = FileOpenItemClick
       end
       object mnuRecentFiles: TMenuItem
-        Caption = 'Recently used'
+        Caption = '&Recent files'
       end
       object FileSaveItem: TMenuItem
         Caption = 'Save &As...'

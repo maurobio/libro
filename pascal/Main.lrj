@@ -12,7 +12,7 @@
 {"hash":2805797,"name":"tmainform.filemenu.caption","sourcebytes":[38,70,105,108,101],"value":"&File"},
 {"hash":107746238,"name":"tmainform.fileopenitem.caption","sourcebytes":[38,79,112,101,110,46,46,46],"value":"&Open..."},
 {"hash":73717461,"name":"tmainform.fileopenitem.hint","sourcebytes":[79,112,101,110,32,97,110,100,32,97,110,97,108,121,122,101,32,97,32,102,105,108,101],"value":"Open and analyze a file"},
-{"hash":185470900,"name":"tmainform.mnurecentfiles.caption","sourcebytes":[82,101,99,101,110,116,108,121,32,117,115,101,100],"value":"Recently used"},
+{"hash":233275059,"name":"tmainform.mnurecentfiles.caption","sourcebytes":[38,82,101,99,101,110,116,32,102,105,108,101,115],"value":"&Recent files"},
 {"hash":49409406,"name":"tmainform.filesaveitem.caption","sourcebytes":[83,97,118,101,32,38,65,115,46,46,46],"value":"Save &As..."},
 {"hash":160594107,"name":"tmainform.filesaveitem.hint","sourcebytes":[83,97,118,101,32,114,101,115,117,108,116,115,32,116,111,32,100,105,115,107],"value":"Save results to disk"},
 {"hash":151346302,"name":"tmainform.fileprintitem.caption","sourcebytes":[38,80,114,105,110,116,46,46,46],"value":"&Print..."},

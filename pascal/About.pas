@@ -148,7 +148,7 @@ end;
 
 procedure TAboutBox.LogoClick(Sender: TObject);
 begin
-  OpenURL('http://www.rizomaeditorial.com');
+  OpenURL('http://www.rizomaeditorial.wordpress.com');
 end;
 
 procedure TAboutBox.WebsiteClick(Sender: TObject);

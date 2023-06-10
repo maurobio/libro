@@ -388,6 +388,7 @@ object AboutBox: TAboutBox
       Cursor = crHandPoint
       Left = 8
       Height = 13
+      Hint = 'librejo.sourceforge.net'
       Top = 236
       Width = 62
       Caption = 'Libro website'
@@ -400,17 +401,21 @@ object AboutBox: TAboutBox
       Font.Style = [fsUnderline]
       ParentColor = False
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       OnClick = WebsiteClick
     end
     object Logo: TImage
       Cursor = crHandPoint
       Left = 325
       Height = 54
+      Hint = 'rizomaeditorial.wordpress.com'
       Top = 4
       Width = 101
       AutoSize = True
       Center = True
       OnClick = LogoClick
+      ParentShowHint = False
       Picture.Data = {
         0A544A706567496D61676547080000FFD8FFE000104A46494600010101007800
         780000FFDB00430006040506050406060506070706080A100A0A09090A140E0F
@@ -480,6 +485,7 @@ object AboutBox: TAboutBox
         C2E689D32EEF0BB1C0216A52D43A4304ABCD91EC4F38ED9E694A0EC9F44E4187
         1E0446A2C3690CC7693B50DA060247B0A5295258FFD9
       }
+      ShowHint = True
       Transparent = True
     end
   end
