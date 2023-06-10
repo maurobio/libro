@@ -44,7 +44,7 @@ This program is [free software](https://www.gnu.org/philosophy/free-sw.en.html),
 
 Sponsored by <img src="images\rizomaeditorial.png" alt="Rizoma Editorial"/>Rizoma Editorial
 
-Powered by <img src="images\powered_by.png" alt="Lazarus"/>Lazarus/Free Pascal
+Powered by <img src="images\powered-by.png" alt="Lazarus"/>Lazarus/Free Pascal
 
 Powered by <img src="images\python.png" alt="Python"/>Python <img src="images\pyqt.png" alt="PyQt"/>PyQt
 
