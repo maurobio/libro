@@ -18,6 +18,7 @@ msgid "This program scans a whole text file (in plain text, HTML, or EPUB format
 msgstr "This program scans a whole text file (in plain text, HTML, or EPUB formats and ranks all used words according to frequency, performing a quantitative analysis of the text using Shannon-Weaver information statistic and Zipf power law function. It counts words, sentences, chars, spaces, and syllables. Also computes readability indexes (Gunning-Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease)."
 
 #: about.strcompiler
+#, object-pascal-format
 msgid "Compiled with Free Pascal v.%s and Lazarus v.%d.%d for the %s - %s platform"
 msgstr "Compiled with Free Pascal v.%s and Lazarus v.%d.%d for the %s - %s platform"
 
@@ -26,7 +27,12 @@ msgctxt "about.strwebsite"
 msgid "Libro website"
 msgstr "Libro website"
 
+#: main.strblankcount
+msgid "Number of lines (without blanks):"
+msgstr ""
+
 #: main.strbottomtitle
+msgctxt "main.strbottomtitle"
 msgid "rank (log)"
 msgstr "rank (log)"
 
@@ -64,6 +70,7 @@ msgid "Invalid file type"
 msgstr "Invalid file type"
 
 #: main.strlefttitle
+msgctxt "main.strlefttitle"
 msgid "frequency (log)"
 msgstr "frequency (log)"
 
@@ -82,6 +89,10 @@ msgstr "File not found!"
 #: main.strnumchars
 msgid "Number of characters:"
 msgstr "Number of characters:"
+
+#: main.strnumlines
+msgid "Number of lines:"
+msgstr ""
 
 #: main.stropentext
 msgctxt "main.stropentext"
@@ -105,7 +116,6 @@ msgid "JPEG files (*.jpg, *.jpeg)|*.jpg;*jpeg|PNG files (*.png)|*.png|Bitmap fil
 msgstr "JPEG files (*.jpg, *.jpeg)|*.jpg;*jpeg|PNG files (*.png)|*.png|Bitmap files (*.bmp)|*.bmp"
 
 #: main.strsavetext
-#| msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub"
 msgctxt "main.strsavetext"
 msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html"
 msgstr "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html"
@@ -159,7 +169,11 @@ msgid "Compiler"
 msgstr ""
 
 #: taboutbox.copyright.caption
-msgid "(c) 2013-2021 Mauro J. Cavalcanti"
+msgid "(c) 2013-2023 Mauro J. Cavalcanti"
+msgstr ""
+
+#: taboutbox.logo.hint
+msgid "rizomaeditorial.wordpress.com"
 msgstr ""
 
 #: taboutbox.okbutton.caption
@@ -189,6 +203,10 @@ msgstr ""
 msgctxt "taboutbox.website.caption"
 msgid "Libro website"
 msgstr "Libro website"
+
+#: taboutbox.website.hint
+msgid "librejo.sourceforge.net"
+msgstr ""
 
 #: tmainform.caption
 msgctxt "tmainform.caption"
@@ -280,22 +298,21 @@ msgid "&Language"
 msgstr "&Language"
 
 #: tmainform.languageportugueseitem.caption
-#| msgid "PortuguÃªs"
 msgid "Português"
 msgstr "Português"
 
 #: tmainform.languageportugueseitem.hint
-#| msgid "Exibir a interface em portuguÃªs"
 msgid "Exibir a interface em português"
 msgstr "Exibir a interface em português"
+
+#: tmainform.mnurecentfiles.caption
+msgctxt "tmainform.mnurecentfiles.caption"
+msgid "&Recent files"
+msgstr ""
 
 #: tmainform.openbtn.hint
 msgid "Open|Open file"
 msgstr "Open|Open file"
-
-#: tmainform.opendialog.title
-msgid "Open existing file"
-msgstr "Open existing file"
 
 #: tmainform.plottab.caption
 msgid "Plot"

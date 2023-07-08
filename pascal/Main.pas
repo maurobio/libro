@@ -107,8 +107,8 @@ type
     { private declarations }
     HistoryFiles: TMRUMenuManager; //THistoryFiles;
     IniFile: TIniFile;
-    Lines: String;
-    procedure RecentFileClicked(Sender: TObject; const FileName: String);
+    Lines: string;
+    procedure RecentFileClicked(Sender: TObject; const FileName: string);
     { !! wp: replaced by above
     procedure HistoryFilesClickHistoryItem(Sender: TObject; Item: TMenuItem;
       const Filename: string); }
@@ -161,6 +161,8 @@ resourcestring
   strChartTitle = 'plot of word frequency';
   strLeftTitle = 'frequency (log)';
   strBottomTitle = 'rank (log)';
+  strNumLines = 'Number of lines:';
+  strBlankCount = 'Number of lines (without blanks):';
 
 function Percent(Val1, Val2: integer): string;
 begin
@@ -287,7 +289,7 @@ var
   S: TStrLst;
   Counts: TIntegerVector;
   I, Rank, TotalChars, NumChars, NumLetters, NumSyllables, NumSentences,
-  SyllableCount, threeOrMore: longint;
+  SyllableCount, threeOrMore, NumLines, BlankCount: longint;
   fileExt, fName, txt, St: string;
   PI, H, Freq, SyllablesPerWord, CharsPerWord, WordsPerSentence,
   fleschReadability, fleschGradeLevel, gunningFog, colemanLiau, smog,
@@ -358,6 +360,8 @@ begin
     NumSentences := 0;
     threeOrMore := 0;
     SyllableCount := 0;
+    NumLines := 0;
+    BlankCount := 0;
     while not TS.EOF do
     begin
       St := Trim(TS.ReadString);
@@ -385,6 +389,9 @@ begin
           Inc(threeOrMore);
         NumSentences += Sentences(St);
       end;
+      Inc(NumLines);
+      if Length(St) = 0 then
+        Inc(BlankCount);
     end;
 
     { Averages }
@@ -484,6 +491,10 @@ begin
       FloatToStrF(SyllablesPerWord, ffFixed, 8, 5), '</td></tr>') + sLineBreak;
     Lines := Lines + Concat('<tr><td>', strWordsPerSentence, '</td><td>',
       FloatToStrF(WordsPerSentence, ffFixed, 8, 5), '</td></tr>') + sLineBreak;
+    Lines := Lines + Concat('<tr><td>', strNumLines, '</td><td>',
+      IntToStr(NumLines), '</td></tr>') + sLineBreak;
+    Lines := Lines + Concat('<tr><td>', strBlankCount, '</td><td>',
+      IntToStr(NumLines - BlankCount), '</td></tr>') + sLineBreak;
     Lines := Lines + '</table>' + sLineBreak;
 
     H := H * (-1);
@@ -566,7 +577,8 @@ begin
   begin
     MainForm.Caption := Application.Title + ' - ' + ExtractFileName(OpenDialog.Filename);
     ScanAlyze(OpenDialog.Filename);
-    HistoryFiles.AddToRecent(OpenDialog.FileName);  // !! wp: replaces this:   HistoryFiles.UpdateList(OpenDialog.Filename);
+    HistoryFiles.AddToRecent(OpenDialog.FileName);
+    // !! wp: replaces this:   HistoryFiles.UpdateList(OpenDialog.Filename);
     PageControl.ActivePage := ResultsTab;
   end;
 end;
@@ -584,12 +596,11 @@ begin
     begin
       AssignFile(Outfile, SaveDialog.Filename);
       Rewrite(Outfile);
-      {  // !! wp     -- WriteLn will crash the application in Windows!
+      {  // !! wp     -- WriteLn will crash the application in Windows! }
       case SaveDialog.FilterIndex of
-        1: WriteLn(Outfile, HTMLViewer.DocumentSource);
-        2: WriteLn(Outfile, StripHTML(HTMLViewer.DocumentSource));
+        1: WriteLn(Outfile, StripHTML(Lines));
+        2: WriteLn(Outfile, Lines);
       end;
-      }
       CloseFile(Outfile);
     end;
   end
@@ -643,7 +654,7 @@ begin
     IniFile := sPath + 'Libro.ini';
     UpdateParentMenu;
   end;                                  }
-  
+
   IniFile := TIniFile.Create(sPath + 'Libro.ini');
   sLang := IniFile.ReadString('Options', 'Language', 'en'); // First default is English
   SetDefaultLang(sLang, 'languages'); //, True);  // !! wp
@@ -713,7 +724,7 @@ end;
 procedure TMainForm.EditCopyItemClick(Sender: TObject);
 begin
   if PageControl.ActivePage = ResultsTab then
-//    Clipboard.AsText := StripHTML(HTMLViewer.Text)  // DocumentSource)  // wp !! Text rather than DocumentSource?
+    //    Clipboard.AsText := StripHTML(HTMLViewer.Text)  // DocumentSource)  // wp !! Text rather than DocumentSource?
     Clipboard.AsText := StripHTML(Lines)
   else
     Chart.CopyToClipboardBitmap;

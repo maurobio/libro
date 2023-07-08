@@ -5,7 +5,7 @@
 {   and computation of readability indices (Flesch, Flesch-Kincaid, SMOG,    }
 {      Gunning-Fog, Coleman-Liau, and Automated Readability Index)           }
 {                                                                            }
-{              Copyright 2013-2017 Mauro J. Cavalcanti                       }
+{              Copyright 2013-2023 Mauro J. Cavalcanti                       }
 {                        maurobio@gmail.com                                  }
 {                                                                            }
 {   This program is free software: you can redistribute it and/or modify     }
@@ -22,12 +22,9 @@
 {   along with this program. If not, see <http://www.gnu.org/licenses/>.     }
 {                                                                            }
 {   Requirements:                                                            }
-{     Lazarus 1.6+ (www.lazarus.freepascal.org)                              }
+{     Lazarus 2.0+ (www.lazarus.freepascal.org)                              }
 {     Free Pascal 3.0+ (www.freepascal.org)                                  }
-{     HTMLViewer 11.8+ (wiki.lazarus.freepascal.org/THtmlPort)               }
-{     HistoryFiles 1.3+ (wiki.freepascal.org/HistoryFiles)                   }
 {     Vector Library 050702+ (torry.net/vcl/science/vector/achvectors.zip)   }
-{                                                                            }
 {============================================================================}
 unit About;
 

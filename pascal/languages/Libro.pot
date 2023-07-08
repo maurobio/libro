@@ -1,197 +1,170 @@
 msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: pt_BR\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: about.strcomments
-msgctxt "about.strcomments"
 msgid "This program scans a whole text file (in plain text, HTML, or EPUB formats and ranks all used words according to frequency, performing a quantitative analysis of the text using Shannon-Weaver information statistic and Zipf power law function. It counts words, sentences, chars, spaces, and syllables. Also computes readability indexes (Gunning-Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease)."
-msgstr "Este programa analisa um arquivo de texto inteiro (nos formatos de texto simples, HTML, EPUB ou ODT) e ordena todas as palavras usadas de acordo com a frequência, executando uma análise quantitativa do texto usando a estatística de informação de Shannon-Weaver e a função da lei de potência de Zipf. O programa conta palavras, sentenças, caracteres, espaços e sílabas. Também calcula índices de legibilidade (Gunning-Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease)"
+msgstr ""
 
 #: about.strcompiler
 #, object-pascal-format
 msgid "Compiled with Free Pascal v.%s and Lazarus v.%d.%d for the %s - %s platform"
-msgstr "Compilado com Free Pascal v.%s e Lazarus v.%d.%d para a platforma %s - %s "
+msgstr ""
 
 #: about.strwebsite
 msgctxt "about.strwebsite"
 msgid "Libro website"
-msgstr "Página do Libro na Web"
-
-#: main.strblankcount
-msgid "Number of lines (without blanks):"
-msgstr "Número de linhas (sem espaços em branco):"
+msgstr ""
 
 #: main.strbottomtitle
 msgctxt "main.strbottomtitle"
 msgid "rank (log)"
-msgstr "classe das palavras (log)"
+msgstr ""
 
 #: main.strcharsperword
 msgid "Average number of characters per word:"
-msgstr "Número de caracteres por palavra:"
+msgstr ""
 
 #: main.strcharttitle
 msgid "plot of word frequency"
-msgstr "Gráfico da frequência de palavras"
+msgstr ""
 
 #: main.strconfirmation
 msgid "Confirmation"
-msgstr "Confirmação"
+msgstr ""
 
 #: main.strdiff
 msgid "Different words:"
-msgstr "Palavras diferentes:"
+msgstr ""
 
 #: main.strerror
 msgid "Error"
-msgstr "Erro"
+msgstr ""
 
 #: main.strfrequency
-msgctxt "main.strfrequency"
 msgid "Frequency"
-msgstr "Frequência"
+msgstr ""
 
 #: main.strindexes
 msgid "Readability Indices"
-msgstr "Índices de Legibilidade"
+msgstr ""
 
 #: main.strinvalidfile
 msgid "Invalid file type"
-msgstr "Tipo de arquivo inválido"
+msgstr ""
 
 #: main.strlefttitle
 msgctxt "main.strlefttitle"
 msgid "frequency (log)"
-msgstr "frequência de palavras (log)"
+msgstr ""
 
 #: main.strletternumbercount
 msgid "Number of characters (alphanumeric):"
-msgstr "Número de caracteres (alfanuméricos)"
+msgstr ""
 
 #: main.strnonspacecount
 msgid "Number of characters (without spaces):"
-msgstr "Número de caracteres (sem espaços):"
+msgstr ""
 
 #: main.strnotfound
 msgid "File not found!"
-msgstr "Arquivo não encontrado!"
+msgstr ""
 
 #: main.strnumchars
 msgid "Number of characters:"
-msgstr "Número de caracteres:"
-
-#: main.strnumlines
-msgid "Number of lines:"
-msgstr "Número de linhas:"
+msgstr ""
 
 #: main.stropentext
-msgctxt "main.stropentext"
 msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub"
-msgstr "Arquivos de texto (*.txt)|*.txt|Arquivos HTML (*.htm,*.html)|*.htm;*.html|Arquivos EPUB (*.epub)|*.ePub"
+msgstr ""
 
 #: main.strpercent
 msgid "% of different words:"
-msgstr "% de palavras diferentes"
+msgstr ""
 
 #: main.strquit
 msgid "Do you want to exit the program?"
-msgstr "Deseja encerrar o programa?"
+msgstr ""
 
 #: main.strrank
 msgid "Rank"
-msgstr "Posição"
+msgstr ""
 
 #: main.strsaveimage
 msgid "JPEG files (*.jpg, *.jpeg)|*.jpg;*jpeg|PNG files (*.png)|*.png|Bitmap files (*.bmp)|*.bmp"
-msgstr "Arquivos JPEG (*.jpg,*.jpeg)|*.jpg;*.jpeg|Arquivos PNG (*.png)|*.png|Arquivos Bitmap (*.bmp)|*.bmp"
+msgstr ""
 
 #: main.strsavetext
-msgctxt "main.strsavetext"
 msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html"
-msgstr "Arquivos de texto (*.txt)|*.txt|Arquivos HTML (*.htm,*.html)|*.htm;*.html "
+msgstr ""
 
 #: main.strsentences
 msgid "Number of sentences:"
-msgstr "Número de sentenças:"
+msgstr ""
 
 #: main.strstatinfo
 msgid "Information Statistic"
-msgstr "Estatística de Informação"
+msgstr ""
 
 #: main.strstattext
 msgid "Text Statistics"
-msgstr "Estatí­sticas do Texto"
+msgstr ""
 
 #: main.strsyllables
 msgid "Number of syllables:"
-msgstr "Número de sílabas:"
+msgstr ""
 
 #: main.strsyllablesperword
 msgid "Average number of syllables per word:"
-msgstr "Número de sílabas por palavra:"
+msgstr ""
 
 #: main.strtitle
 msgid "Text Analysis of "
-msgstr "Análise Textual de "
+msgstr ""
 
 #: main.strtotalcount
 msgid "Number of words:"
-msgstr "Número de palavras:"
+msgstr ""
 
 #: main.strword
 msgid "Word"
-msgstr "Palavra"
+msgstr ""
 
 #: main.strwordspersentence
 msgid "Average number of words per sentence:"
-msgstr "Número de palavras por sentença:"
+msgstr ""
 
 #: taboutbox.caption
 msgid "About"
-msgstr "Sobre"
+msgstr ""
 
 #: taboutbox.comments.caption
 msgid "Comment"
-msgstr "Comentário"
+msgstr ""
 
 #: taboutbox.compiler.caption
 msgid "Compiler"
-msgstr "Compilador"
-
-#: taboutbox.copyright.caption
-msgid "(c) 2013-2023 Mauro J. Cavalcanti"
 msgstr ""
 
-#: taboutbox.logo.hint
-msgid "rizomaeditorial.wordpress.com"
+#: taboutbox.copyright.caption
+msgid "(c) 2013-2019 Mauro J. Cavalcanti"
 msgstr ""
 
 #: taboutbox.okbutton.caption
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: taboutbox.operatingsystem.caption
 msgid "OS:"
-msgstr "SO:"
+msgstr ""
 
 #: taboutbox.productname.caption
 msgctxt "taboutbox.productname.caption"
 msgid "Libro"
-msgstr "Libro"
+msgstr ""
 
 #: taboutbox.version.caption
 msgid "Version"
-msgstr "Versão"
+msgstr ""
 
 #: taboutbox.versionnumber.caption
 msgid "0.0.0"
@@ -200,138 +173,145 @@ msgstr ""
 #: taboutbox.website.caption
 msgctxt "taboutbox.website.caption"
 msgid "Libro website"
-msgstr "Página do Libro na Web"
-
-#: taboutbox.website.hint
-msgid "librejo.sourceforge.net"
 msgstr ""
 
 #: tmainform.caption
 msgctxt "tmainform.caption"
 msgid "Libro"
-msgstr "Libro"
+msgstr ""
+
+#: tmainform.chart.axislist[0].title.caption
+msgctxt "tmainform.chart.axislist[0].title.caption"
+msgid "frequency (log)"
+msgstr ""
+
+#: tmainform.chart.axislist[1].title.caption
+msgctxt "tmainform.chart.axislist[1].title.caption"
+msgid "rank (log)"
+msgstr ""
 
 #: tmainform.copybtn.hint
 msgid "Copy|Copy results to the clipboard"
-msgstr "Copiar|Copiar resultados para a área de transferência"
+msgstr ""
 
 #: tmainform.editcopyitem.caption
 msgid "&Copy"
-msgstr "&Copiar"
+msgstr ""
 
 #: tmainform.editcopyitem.hint
 msgid "Copy results to the clipboard"
-msgstr "Copiar resultados para a área de transferência"
+msgstr ""
 
 #: tmainform.editmenu.caption
 msgid "&Edit"
-msgstr "&Editar"
+msgstr ""
 
 #: tmainform.exitbtn.hint
 msgid "Exit|Exit application"
-msgstr "Sair|Terminar o programa"
+msgstr ""
 
 #: tmainform.fileexititem.caption
 msgid "E&xit"
-msgstr "Sai&r"
+msgstr ""
 
 #: tmainform.fileexititem.hint
 msgid "Exit application"
-msgstr "Terminar o programa"
+msgstr ""
 
 #: tmainform.filemenu.caption
 msgid "&File"
-msgstr "&Arquivo"
+msgstr ""
 
 #: tmainform.fileopenitem.caption
 msgid "&Open..."
-msgstr "A&brir..."
+msgstr ""
 
 #: tmainform.fileopenitem.hint
 msgid "Open and analyze a file"
-msgstr "Abrir e analisar um arquivo"
+msgstr ""
 
 #: tmainform.fileprintitem.caption
 msgid "&Print..."
-msgstr "Im&primir..."
+msgstr ""
 
 #: tmainform.fileprintitem.hint
 msgid "Print results"
-msgstr "Imprimir resultados"
+msgstr ""
 
 #: tmainform.filesaveitem.caption
 msgid "Save &As..."
-msgstr "Salvar &Como..."
+msgstr ""
 
 #: tmainform.filesaveitem.hint
 msgid "Save results to disk"
-msgstr "Gravar resultados em disco"
+msgstr ""
 
 #: tmainform.helpaboutitem.caption
 msgid "A&bout Libro"
-msgstr "So&bre o Libro"
+msgstr ""
 
 #: tmainform.helpaboutitem.hint
 msgid "Display information about the program"
-msgstr "Exibir informação sobre o programa"
+msgstr ""
 
 #: tmainform.helpbtn.hint
 msgid "About|Display information about the program"
-msgstr "Sobre|Exibir informação sobre o programa"
+msgstr ""
 
 #: tmainform.helpmenu.caption
 msgid "&Help"
-msgstr "A&juda"
+msgstr ""
 
 #: tmainform.languageenglishitem.caption
 msgid "English"
-msgstr "English"
+msgstr ""
 
 #: tmainform.languageenglishitem.hint
 msgid "Show the interface in English"
-msgstr "Show the interface in English"
+msgstr ""
 
 #: tmainform.languagemenu.caption
 msgid "&Language"
-msgstr "&Idioma"
+msgstr ""
 
 #: tmainform.languageportugueseitem.caption
 msgid "Português"
-msgstr "Português"
+msgstr ""
 
 #: tmainform.languageportugueseitem.hint
 msgid "Exibir a interface em português"
-msgstr "Exibir a interface em português"
+msgstr ""
 
 #: tmainform.mnurecentfiles.caption
 msgctxt "tmainform.mnurecentfiles.caption"
-msgid "&Recent files"
-msgstr "Arquivos recentes"
+msgid "Recently used"
+msgstr ""
 
 #: tmainform.openbtn.hint
 msgid "Open|Open file"
-msgstr "Aberto|Abrir arquivo"
+msgstr ""
 
 #: tmainform.plottab.caption
 msgid "Plot"
-msgstr "Gráfico"
+msgstr ""
 
 #: tmainform.printbtn.hint
 msgid "Print|Print results"
-msgstr "Imprimir|Imprimir resultados"
+msgstr ""
 
 #: tmainform.resultstab.caption
 msgid "Results"
-msgstr "Resultados"
+msgstr ""
 
 #: tmainform.savebtn.hint
 msgid "Save|Save results to disk"
-msgstr "Salvar|Salvar resultados em disco"
+msgstr ""
 
 #: tmainform.savedialog.title
 msgid "Save as"
-msgstr "Salvar como"
+msgstr ""
 
 #: tmainform.statusline.simpletext
 msgid "Ready"
-msgstr "Pronto"
+msgstr ""
+

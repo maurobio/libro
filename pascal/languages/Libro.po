@@ -25,7 +25,12 @@ msgctxt "about.strwebsite"
 msgid "Libro website"
 msgstr ""
 
+#: main.strblankcount
+msgid "Number of lines (without blanks):"
+msgstr ""
+
 #: main.strbottomtitle
+msgctxt "main.strbottomtitle"
 msgid "rank (log)"
 msgstr "rank (log)"
 
@@ -63,6 +68,7 @@ msgid "Invalid file type"
 msgstr "Invalid file type"
 
 #: main.strlefttitle
+msgctxt "main.strlefttitle"
 msgid "frequency (log)"
 msgstr "frequency (log)"
 
@@ -81,6 +87,10 @@ msgstr "File not found!"
 #: main.strnumchars
 msgid "Number of characters:"
 msgstr "Number of characters:"
+
+#: main.strnumlines
+msgid "Number of lines:"
+msgstr ""
 
 #: main.stropentext
 #, fuzzy
@@ -162,7 +172,11 @@ msgid "Compiler"
 msgstr ""
 
 #: taboutbox.copyright.caption
-msgid "(c) 2013-2021 Mauro J. Cavalcanti"
+msgid "(c) 2013-2023 Mauro J. Cavalcanti"
+msgstr ""
+
+#: taboutbox.logo.hint
+msgid "rizomaeditorial.wordpress.com"
 msgstr ""
 
 #: taboutbox.okbutton.caption
@@ -190,6 +204,10 @@ msgstr ""
 #: taboutbox.website.caption
 msgctxt "taboutbox.website.caption"
 msgid "Libro website"
+msgstr ""
+
+#: taboutbox.website.hint
+msgid "librejo.sourceforge.net"
 msgstr ""
 
 #: tmainform.caption
@@ -293,13 +311,13 @@ msgstr "PortuguÃªs"
 msgid "Exibir a interface em português"
 msgstr "Exibir a interface em português"
 
+#: tmainform.mnurecentfiles.caption
+msgid "&Recent files"
+msgstr ""
+
 #: tmainform.openbtn.hint
 msgid "Open|Open file"
 msgstr "Open|Open file"
-
-#: tmainform.opendialog.title
-msgid "Open existing file"
-msgstr "Open existing file"
 
 #: tmainform.plottab.caption
 msgid "Plot"
