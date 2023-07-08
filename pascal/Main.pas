@@ -162,7 +162,7 @@ resourcestring
   strLeftTitle = 'frequency (log)';
   strBottomTitle = 'rank (log)';
   strNumLines = 'Number of lines:';
-  strBlankCount = 'Number of lines (without blanks):';
+  strBlankLines = 'Number of lines (without blanks):';
 
 function Percent(Val1, Val2: integer): string;
 begin
@@ -289,7 +289,7 @@ var
   S: TStrLst;
   Counts: TIntegerVector;
   I, Rank, TotalChars, NumChars, NumLetters, NumSyllables, NumSentences,
-  SyllableCount, threeOrMore, NumLines, BlankCount: longint;
+  SyllableCount, threeOrMore, NumLines, BlankLines: longint;
   fileExt, fName, txt, St: string;
   PI, H, Freq, SyllablesPerWord, CharsPerWord, WordsPerSentence,
   fleschReadability, fleschGradeLevel, gunningFog, colemanLiau, smog,
@@ -361,7 +361,7 @@ begin
     threeOrMore := 0;
     SyllableCount := 0;
     NumLines := 0;
-    BlankCount := 0;
+    BlankLines := 0;
     while not TS.EOF do
     begin
       St := Trim(TS.ReadString);
@@ -391,7 +391,7 @@ begin
       end;
       Inc(NumLines);
       if Length(St) = 0 then
-        Inc(BlankCount);
+        Inc(BlankLines);
     end;
 
     { Averages }
@@ -493,8 +493,8 @@ begin
       FloatToStrF(WordsPerSentence, ffFixed, 8, 5), '</td></tr>') + sLineBreak;
     Lines := Lines + Concat('<tr><td>', strNumLines, '</td><td>',
       IntToStr(NumLines), '</td></tr>') + sLineBreak;
-    Lines := Lines + Concat('<tr><td>', strBlankCount, '</td><td>',
-      IntToStr(NumLines - BlankCount), '</td></tr>') + sLineBreak;
+    Lines := Lines + Concat('<tr><td>', strBlankLines, '</td><td>',
+      IntToStr(NumLines - BlankLines), '</td></tr>') + sLineBreak;
     Lines := Lines + '</table>' + sLineBreak;
 
     H := H * (-1);

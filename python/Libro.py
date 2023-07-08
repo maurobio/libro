@@ -7,7 +7,7 @@
 #   and computation of readability indices (Flesch, Flesch-Kincaid, SMOG,    #
 #      Gunning-Fog, Coleman-Liau, and Automated Readability Index)           #
 #                                                                            #
-#              Copyright 2013-2015 Mauro J. Cavalcanti                       #
+#              Copyright 2013-2023 Mauro J. Cavalcanti                       #
 #                        maurobio@gmail.com                                  #
 #                                                                            #
 #   This program is free software: you can redistribute it and/or modify     #
@@ -33,6 +33,7 @@
 #   REVISION HISTORY:                                                        #
 #     Version 1.00, 1st Mar 2013 - Initial release (non-GUI version)         #
 #     Varsion 2.00, 1st Mar 2015 - Second release (GUI version)              #
+#     Varsion 2.10, 8th Jul 2023 - Third release (GUI version)               #
 #============================================================================#
 
 from __future__ import division
@@ -52,7 +53,7 @@ from bs4 import BeautifulSoup
 from odt2txt import OpenDocumentTextFile
 import resources
 
-__version__ = "2.0.0 (2015-03-10)"
+__version__ = "2.1.0"
 
 #-- Support functions
 def format(num, places = 0):
@@ -152,7 +153,7 @@ class MainWindow(QtGui.QMainWindow):
     def helpAboutDialog(self):
         QtGui.QMessageBox.about(self, self.trUtf8("About Libro"), 
             "<b>Libro</b> v" + __version__ + "<p>" + \
-            "&copy; 2013-2015 Mauro J. Cavalcanti<p>" + \
+            "&copy; 2013-2023 Mauro J. Cavalcanti<p>" + \
             self.trUtf8("This program scans a whole text file (in plain text, HTML, EPUB, or ODT formats) " + \
                 "and ranks all used words according to frequency, performing a quantitative analysis of the " +  \
                 "text using Shannon-Weaver information statistic and Zipf power law function. It counts " + \
@@ -217,6 +218,8 @@ class MainWindow(QtGui.QMainWindow):
         totalchars = 0
         num_chars = 0
         no_spaces = 0
+        num_lines = 0
+        blank_lines = 0
         for line in open(f):
             for character in line:
                 if character.isalnum():
@@ -224,6 +227,9 @@ class MainWindow(QtGui.QMainWindow):
                 if not character.isspace():
                     no_spaces += 1
                 totalchars += 1	
+            num_lines += 1
+            if len(line) == 1:
+                blank_lines += 1
         
         with open(f,"rb") as infile:
             all_text = infile.read()
@@ -306,6 +312,8 @@ class MainWindow(QtGui.QMainWindow):
         outfile.write("<tr><td>Average number of words per sentence: </td><td>" + format(wordsPerSentence, 5) + "</td></tr>\n")
         outfile.write("<tr><td>Different words: </td><td>" + str(count) + "</td></tr>\n")
         outfile.write("<tr><td>% of different words: </td><td>" + format(percent(count, totalcount), 2) + "</td></tr>\n")
+        outfile.write("<tr><td>Number of lines: </td><td>" + str(num_lines) + "</td></tr>\n")
+        outfile.write("<tr><td>Number of lines (without blanks): </td><td>" + str(num_lines - blank_lines) + "</td></tr>\n")
         outfile.write("</table>\n")
 
         #-- Readability indices
