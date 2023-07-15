@@ -388,7 +388,7 @@ object AboutBox: TAboutBox
       Cursor = crHandPoint
       Left = 8
       Height = 13
-      Hint = 'librejo.sourceforge.net'
+      Hint = 'http://librejo.sourceforge.net'
       Top = 236
       Width = 62
       Caption = 'Libro website'
@@ -409,7 +409,7 @@ object AboutBox: TAboutBox
       Cursor = crHandPoint
       Left = 325
       Height = 54
-      Hint = 'rizomaeditorial.wordpress.com'
+      Hint = 'http://rizomaeditorial.wordpress.com'
       Top = 4
       Width = 101
       AutoSize = True

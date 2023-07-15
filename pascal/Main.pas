@@ -15,7 +15,7 @@
 {                                                                              }
 {   This program is distributed in the hope that it will be useful,            }
 {   but WITHOUT ANY WARRANTY; without even the implied warranty of             }
-{   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              }
+{   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the               }
 {   GNU General Public License for more details.                               }
 {                                                                              }
 {   You should have received a copy of the GNU General Public License          }
@@ -24,10 +24,9 @@
 {   Requirements:                                                              }
 {    Lazarus 2.0+ (www.lazarus.freepascal.org)                                 }
 {    Free Pascal 3.0+ (www.freepascal.org)                                     }
+{    HTMLViewer 11.8+ (wiki.lazarus.freepascal.org/THtmlPort)                  }
+{    HistoryFiles 1.3+ (wiki.freepascal.org/HistoryFiles)                      }
 {    Vector Library 050702+ (torry.net/files/vcl/science/vector/achvectors.zip)}
-{                                                                              }
-{   Acknowledgements:                                                          }
-{    Thanks to wp from the Lazarus Forum for adding improvements to the code.  }
 {==============================================================================}
 unit Main;
 
@@ -38,10 +37,8 @@ interface
 uses
   LCLIntf, LCLType, Classes, SysUtils, StrUtils, FileUtil, Character,
   TAGraph, TASeries, TATransformations, TASources, PrintersDlgs, Forms,
-  Controls, Graphics, Dialogs, ComCtrls, Menus, Clipbrd, IniFiles,
-  IpHtml, // !! wp: replaces HtmlView,
-  mruManager, //HistoryFiles,   !! wp: replaced by mruManager
-  LCLTranslator, Zipper;
+  Controls, Graphics, Dialogs, ComCtrls, Menus, Clipbrd, IniFiles, HtmlView,
+  HistoryFiles, LCLTranslator, Zipper;
 
 type
 
@@ -62,20 +59,19 @@ type
     HelpAboutItem: TMenuItem;
     HelpBtn: TToolButton;
     HelpMenu: TMenuItem;
+    HistoryFiles: THistoryFiles;
+    HtmlViewer: THtmlViewer;
     ImageList: TImageList;
-    HtmlPanel: TIpHtmlPanel;
     LineSeries: TLineSeries;
     MainMenu: TMainMenu;
     LanguagePortugueseItem: TMenuItem;
     LanguageMenu: TMenuItem;
     LanguageEnglishItem: TMenuItem;
-    mnuRecentFiles: TMenuItem;
     N1: TMenuItem;
     N2: TMenuItem;
     OpenBtn: TToolButton;
     OpenDialog: TOpenDialog;
     PageControl: TPageControl;
-    RecentFilesPopup: TPopupMenu;
     PrintBtn: TToolButton;
     PrintDialog: TPrintDialog;
     SaveBtn: TToolButton;
@@ -101,17 +97,14 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure HelpAboutItemClick(Sender: TObject);
+    procedure HistoryFilesClickHistoryItem(Sender: TObject; Item: TMenuItem;
+      const Filename: string);
     procedure LanguageEnglishItemClick(Sender: TObject);
     procedure LanguagePortugueseItemClick(Sender: TObject);
   private
     { private declarations }
-    HistoryFiles: TMRUMenuManager; //THistoryFiles;
     IniFile: TIniFile;
     Lines: string;
-    procedure RecentFileClicked(Sender: TObject; const FileName: string);
-    { !! wp: replaced by above
-    procedure HistoryFilesClickHistoryItem(Sender: TObject; Item: TMenuItem;
-      const Filename: string); }
   public
     { public declarations }
     procedure CreateAxisLabels(ASource: TListChartSource; AMin, AMax: double);
@@ -123,9 +116,8 @@ var
 
 implementation
 
-uses
-  Aliasv, StrLst, StrCount, VTxtStrm, VectStr,
-  Math, TAChartUtils, About;
+uses Aliasv, StrLst, StrCount, VTxtStrm, VectStr, Math, TAChartUtils,
+  About;
 
 {$R *.lfm}
 
@@ -290,7 +282,7 @@ var
   Counts: TIntegerVector;
   I, Rank, TotalChars, NumChars, NumLetters, NumSyllables, NumSentences,
   SyllableCount, threeOrMore, NumLines, BlankLines: longint;
-  fileExt, fName, txt, St: string;
+  fileExt, fName, txt, St{, Lines}: string;
   PI, H, Freq, SyllablesPerWord, CharsPerWord, WordsPerSentence,
   fleschReadability, fleschGradeLevel, gunningFog, colemanLiau, smog,
   ARI, XMin, XMax, YMin, YMax: double;
@@ -303,8 +295,9 @@ var
   Result: boolean;
 
 begin
+  Application.ProcessMessages;
   Screen.Cursor := crHourGlass;
-  FormatSettings.DecimalSeparator := '.';
+  DecimalSeparator := '.';
 
   fileExt := LowerCase(ExtractFileExt(fileName));
   case fileExt of
@@ -523,12 +516,9 @@ begin
     Lines := Lines + '</table>' + sLineBreak;
     Lines := Lines + '</body>' + sLineBreak;
     Lines := Lines + '</html>';
-    HtmlPanel.SetHtmlFromStr(Lines);
-    HtmlPanel.Visible := True;
-    {
     HtmlViewer.LoadFromString(Lines);
     HtmlViewer.Visible := True;
-     }
+
     { The Extent of a series contains the minimum and maximum x and y values
     Note: the extent is in "axis" units, i.e. not transformed. }
     Ex := LineSeries.Extent;
@@ -576,9 +566,10 @@ begin
   if OpenDialog.Execute then
   begin
     MainForm.Caption := Application.Title + ' - ' + ExtractFileName(OpenDialog.Filename);
+    StatusLine.SimpleText := 'Analyzing document - ' + ExtractFileName(OpenDialog.Filename) + '...' ;
     ScanAlyze(OpenDialog.Filename);
-    HistoryFiles.AddToRecent(OpenDialog.FileName);
-    // !! wp: replaces this:   HistoryFiles.UpdateList(OpenDialog.Filename);
+    StatusLine.SimpleText := 'Ready';
+    HistoryFiles.UpdateList(OpenDialog.Filename);
     PageControl.ActivePage := ResultsTab;
   end;
 end;
@@ -596,10 +587,11 @@ begin
     begin
       AssignFile(Outfile, SaveDialog.Filename);
       Rewrite(Outfile);
-      {  // !! wp     -- WriteLn will crash the application in Windows! }
       case SaveDialog.FilterIndex of
         1: WriteLn(Outfile, StripHTML(Lines));
         2: WriteLn(Outfile, Lines);
+        //1: WriteLn(Outfile, HTMLViewer.DocumentSource);
+        //2: WriteLn(Outfile, StripHTML(HTMLViewer.DocumentSource));
       end;
       CloseFile(Outfile);
     end;
@@ -631,33 +623,12 @@ var
   sPath, sLang: string;
 begin
   sPath := ExtractFilePath(Application.ExeName);
-
-  Historyfiles := TMRUMenuManager.Create(self);
-  with HistoryFiles do
-  begin
-    IniFileName := sPath + 'Libro.ini';
-    MenuItem := mnuRecentFiles;
-    PopupMenu := RecentFilesPopup;
-    OnRecentFile := @RecentFileClicked;
-  end;
-                                       { !! wp: is replaced by above code
-  HistoryFiles := THistoryFiles.Create(self);
-  with HistoryFiles do
-  begin
-    IniKey := 'History Files';
-    ParentMenu := FileMenu;
-    Separator := sepTop;
-    Position := 6;
-    FileMustExist := True;
-    OnClickHistoryItem := @HistoryFilesClickHistoryItem;
-    LocalPath := sPath;
-    IniFile := sPath + 'Libro.ini';
-    UpdateParentMenu;
-  end;                                  }
-
+  HistoryFiles.LocalPath := sPath;
+  HistoryFiles.IniFile := sPath + 'Libro.ini';
+  HistoryFiles.UpdateParentMenu;
   IniFile := TIniFile.Create(sPath + 'Libro.ini');
   sLang := IniFile.ReadString('Options', 'Language', 'en'); // First default is English
-  SetDefaultLang(sLang, 'languages'); //, True);  // !! wp
+  SetDefaultLang(sLang, 'languages', True);
   PageControl.ActivePage := ResultsTab;
   if sLang = 'en' then
   begin
@@ -683,17 +654,15 @@ begin
   AboutBox.ShowModal;
 end;
 
-
-procedure TMainForm.RecentFileClicked(Sender: TObject; const FileName: string);
-{ !! wp: renamed like above
 procedure TMainForm.HistoryFilesClickHistoryItem(Sender: TObject;
   Item: TMenuItem; const Filename: string);
-  }
 begin
   if FileExists(Filename) then
   begin
     MainForm.Caption := Application.Title + ' - ' + ExtractFileName(Filename);
+    StatusLine.SimpleText := 'Analyzing document - ' + ExtractFileName(Filename) + '...' ;
     ScanAlyze(Filename);
+    StatusLine.SimpleText := 'Ready';
   end
   else
     Application.MessageBox(PChar(strNotFound), PChar(strError), mb_Ok or
@@ -702,7 +671,7 @@ end;
 
 procedure TMainForm.LanguageEnglishItemClick(Sender: TObject);
 begin
-  SetDefaultLang('en', 'language'); // , True);   // !! wp
+  SetDefaultLang('en', 'language', True);
   IniFile.WriteString('Options', 'Language', 'en');
   LanguageEnglishItem.Checked := True;
   LanguagePortugueseItem.Checked := False;
@@ -710,7 +679,7 @@ end;
 
 procedure TMainForm.LanguagePortugueseItemClick(Sender: TObject);
 begin
-  SetDefaultLang('pt-br', 'language'); // , True);  // !! wp
+  SetDefaultLang('pt-br', 'language', True);
   IniFile.WriteString('Options', 'Language', 'pt-br');
   LanguageEnglishItem.Checked := False;
   LanguagePortugueseItem.Checked := True;
@@ -724,7 +693,7 @@ end;
 procedure TMainForm.EditCopyItemClick(Sender: TObject);
 begin
   if PageControl.ActivePage = ResultsTab then
-    //    Clipboard.AsText := StripHTML(HTMLViewer.Text)  // DocumentSource)  // wp !! Text rather than DocumentSource?
+    //Clipboard.AsText := StripHTML(HTMLViewer.DocumentSource)
     Clipboard.AsText := StripHTML(Lines)
   else
     Chart.CopyToClipboardBitmap;

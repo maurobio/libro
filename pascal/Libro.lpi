@@ -19,7 +19,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="3"/>
-      <MinorVersionNr Value="4"/>
+      <MinorVersionNr Value="5"/>
       <StringTable Comments="Build configured for Win Linux and Darwin" CompanyName="Rizoma Editorial" FileDescription="A cross-platform program for statistical analysis of texts, using Shannon-Weaver information theory, Zipf power law function, and readability tests" InternalName="Libro" LegalCopyright="(c) 2013-2017 Mauro J. Cavalcanti" LegalTrademarks="GPL3" OriginalFilename="Libro" ProductName="Lazarus and Freepascal" ProductVersion="1.x and 3.x"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -34,19 +34,22 @@
         <Mode0 Name="default"/>
       </Modes>
     </RunParams>
-    <RequiredPackages Count="4">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="TurboPowerIPro"/>
+        <PackageName Value="Printer4Lazarus"/>
       </Item1>
       <Item2>
-        <PackageName Value="Printer4Lazarus"/>
+        <PackageName Value="HistoryLazarus"/>
       </Item2>
       <Item3>
-        <PackageName Value="TAChartLazarusPkg"/>
+        <PackageName Value="FrameViewer09"/>
       </Item3>
       <Item4>
-        <PackageName Value="LCL"/>
+        <PackageName Value="TAChartLazarusPkg"/>
       </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
     <Units Count="3">
       <Unit0>
@@ -76,14 +79,13 @@
       <Filename Value="Libro"/>
     </Target>
     <SearchPaths>
-      <IncludeFiles Value="$(ProjOutDir);3rd-party\Vectors"/>
-      <OtherUnitFiles Value="3rd-party\mrumenu;3rd-party\Vectors"/>
+      <IncludeFiles Value="$(ProjOutDir);C:\lazarus\user\achvectors\Vectors\"/>
+      <OtherUnitFiles Value="C:\lazarus\user\achvectors\Vectors\"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="False"/>
-        <DebugInfoType Value="dsDwarf3"/>
       </Debugging>
       <Options>
         <Win32>

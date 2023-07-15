@@ -1,6 +1,7 @@
 object MainForm: TMainForm
   Left = 239
   Height = 408
+  Hint = '|Ready'
   Top = 122
   Width = 774
   Caption = 'Libro'
@@ -11,10 +12,12 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poDesktopCenter
+  ShowHint = True
   LCLVersion = '2.0.12.0'
   object PageControl: TPageControl
     Left = 0
     Height = 333
+    Hint = '|Ready'
     Top = 32
     Width = 774
     ActivePage = ResultsTab
@@ -25,35 +28,33 @@ object MainForm: TMainForm
       Caption = 'Results'
       ClientHeight = 305
       ClientWidth = 766
-      object HtmlPanel: TIpHtmlPanel
+      object HtmlViewer: THtmlViewer
         Left = 0
         Height = 305
         Top = 0
         Width = 766
+        BorderStyle = htSingle
+        DefBackground = clWhite
+        HistoryMaxCount = 0
+        NoSelect = False
+        PrintMarginBottom = 2
+        PrintMarginLeft = 2
+        PrintMarginRight = 2
+        PrintMarginTop = 2
+        PrintScale = 1
+        ScrollBars = ssVertical
         Align = alClient
-        FixedTypeface = 'Courier New'
-        DefaultTypeFace = 'default'
-        DefaultFontSize = 12
-        FlagErrors = False
-        PrintSettings.MarginLeft = 0.5
-        PrintSettings.MarginTop = 0.5
-        PrintSettings.MarginRight = 0.5
-        PrintSettings.MarginBottom = 0.5
-        PrintSettings.Preview.Left = 640
-        PrintSettings.Preview.Top = 270
-        PrintSettings.Preview.Width = 1920
-        PrintSettings.Preview.Height = 810
         TabOrder = 0
         Visible = False
       end
     end
     object PlotTab: TTabSheet
       Caption = 'Plot'
-      ClientHeight = 325
+      ClientHeight = 303
       ClientWidth = 766
       object Chart: TChart
         Left = 0
-        Height = 325
+        Height = 303
         Top = 0
         Width = 766
         AxisList = <        
@@ -147,11 +148,11 @@ object MainForm: TMainForm
     Panels = <>
     ParentShowHint = False
     SimpleText = 'Ready'
-    ShowHint = True
   end
   object CoolBar: TCoolBar
     Left = 0
     Height = 32
+    Hint = '|Ready'
     Top = 0
     Width = 774
     AutoSize = True
@@ -166,6 +167,7 @@ object MainForm: TMainForm
       AnchorSideTop.Control = CoolBar
       Left = 24
       Height = 22
+      Hint = '|Ready'
       Top = 5
       Width = 503
       Align = alNone
@@ -173,21 +175,21 @@ object MainForm: TMainForm
       BorderSpacing.Top = 3
       EdgeBorders = []
       Images = ImageList
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
       Transparent = True
       object OpenBtn: TToolButton
         Left = 1
         Hint = 'Open|Open file'
         Top = 0
-        DropdownMenu = RecentFilesPopup
         ImageIndex = 0
         OnClick = FileOpenItemClick
         ParentShowHint = False
         ShowHint = True
-        Style = tbsDropDown
       end
       object SaveBtn: TToolButton
-        Left = 36
+        Left = 24
         Hint = 'Save|Save results to disk'
         Top = 0
         ImageIndex = 1
@@ -196,14 +198,14 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object ToolButton3: TToolButton
-        Left = 59
+        Left = 47
         Height = 22
         Top = 0
         ImageIndex = 2
         Style = tbsSeparator
       end
       object CopyBtn: TToolButton
-        Left = 67
+        Left = 55
         Hint = 'Copy|Copy results to the clipboard'
         Top = 0
         ImageIndex = 2
@@ -212,14 +214,14 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object ToolButton5: TToolButton
-        Left = 90
+        Left = 78
         Height = 22
         Top = 0
         ImageIndex = 3
         Style = tbsSeparator
       end
       object PrintBtn: TToolButton
-        Left = 98
+        Left = 86
         Hint = 'Print|Print results'
         Top = 0
         ImageIndex = 3
@@ -227,7 +229,7 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object HelpBtn: TToolButton
-        Left = 121
+        Left = 109
         Hint = 'About|Display information about the program'
         Top = 0
         ImageIndex = 4
@@ -236,14 +238,14 @@ object MainForm: TMainForm
         ShowHint = True
       end
       object ToolButton8: TToolButton
-        Left = 144
+        Left = 132
         Height = 22
         Top = 0
         ImageIndex = 5
         Style = tbsSeparator
       end
       object ExitBtn: TToolButton
-        Left = 152
+        Left = 140
         Hint = 'Exit|Exit application'
         Top = 0
         ImageIndex = 5
@@ -265,9 +267,6 @@ object MainForm: TMainForm
         ImageIndex = 0
         ShortCut = 16463
         OnClick = FileOpenItemClick
-      end
-      object mnuRecentFiles: TMenuItem
-        Caption = '&Recent files'
       end
       object FileSaveItem: TMenuItem
         Caption = 'Save &As...'
@@ -332,6 +331,7 @@ object MainForm: TMainForm
     end
   end
   object OpenDialog: TOpenDialog
+    Title = 'Open existing file'
     DefaultExt = '.txt'
     Options = [ofFileMustExist, ofEnableSizing, ofViewDetail]
     Left = 632
@@ -642,6 +642,17 @@ object MainForm: TMainForm
       0000000000000000000000000000
     }
   end
+  object HistoryFiles: THistoryFiles
+    IniKey = 'History Files'
+    IniFile = 'History.ini'
+    ParentMenu = FileMenu
+    Separator = sepTop
+    Position = 6
+    FileMustExist = True
+    OnClickHistoryItem = HistoryFilesClickHistoryItem
+    Left = 557
+    Top = 32
+  end
   object YAxisTransformation: TChartAxisTransformations
     Left = 584
     Top = 112
@@ -663,9 +674,5 @@ object MainForm: TMainForm
     object XAxisLogTransform: TLogarithmAxisTransform
       Base = 10
     end
-  end
-  object RecentFilesPopup: TPopupMenu
-    Left = 193
-    Top = 103
   end
 end

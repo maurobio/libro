@@ -15,15 +15,17 @@
 {                                                                            }
 {   This program is distributed in the hope that it will be useful,          }
 {   but WITHOUT ANY WARRANTY; without even the implied warranty of           }
-{   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            }
+{   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the             }
 {   GNU General Public License for more details.                             }
 {                                                                            }
 {   You should have received a copy of the GNU General Public License        }
 {   along with this program. If not, see <http://www.gnu.org/licenses/>.     }
 {                                                                            }
 {   Requirements:                                                            }
-{     Lazarus 2.0+ (www.lazarus.freepascal.org)                              }
+{     Lazarus 1.6+ (www.lazarus.freepascal.org)                              }
 {     Free Pascal 3.0+ (www.freepascal.org)                                  }
+{     HTMLViewer 11.8+ (wiki.lazarus.freepascal.org/THtmlPort)               }
+{     HistoryFiles 1.3+ (wiki.freepascal.org/HistoryFiles)                   }
 {     Vector Library 050702+ (torry.net/vcl/science/vector/achvectors.zip)   }
 {============================================================================}
 unit About;
@@ -145,7 +147,7 @@ end;
 
 procedure TAboutBox.LogoClick(Sender: TObject);
 begin
-  OpenURL('http://www.rizomaeditorial.wordpress.com');
+  OpenURL('http://rizomaeditorial.wordpress.com');
 end;
 
 procedure TAboutBox.WebsiteClick(Sender: TObject);
