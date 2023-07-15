@@ -104,7 +104,6 @@ type
   private
     { private declarations }
     IniFile: TIniFile;
-    Lines: string;
   public
     { public declarations }
     procedure CreateAxisLabels(ASource: TListChartSource; AMin, AMax: double);
@@ -282,7 +281,7 @@ var
   Counts: TIntegerVector;
   I, Rank, TotalChars, NumChars, NumLetters, NumSyllables, NumSentences,
   SyllableCount, threeOrMore, NumLines, BlankLines: longint;
-  fileExt, fName, txt, St{, Lines}: string;
+  fileExt, fName, txt, St, Lines: string;
   PI, H, Freq, SyllablesPerWord, CharsPerWord, WordsPerSentence,
   fleschReadability, fleschGradeLevel, gunningFog, colemanLiau, smog,
   ARI, XMin, XMax, YMin, YMax: double;
@@ -588,10 +587,8 @@ begin
       AssignFile(Outfile, SaveDialog.Filename);
       Rewrite(Outfile);
       case SaveDialog.FilterIndex of
-        1: WriteLn(Outfile, StripHTML(Lines));
-        2: WriteLn(Outfile, Lines);
-        //1: WriteLn(Outfile, HTMLViewer.DocumentSource);
-        //2: WriteLn(Outfile, StripHTML(HTMLViewer.DocumentSource));
+        1: WriteLn(Outfile, StripHTML(HTMLViewer.DocumentSource));
+        2: WriteLn(Outfile, HTMLViewer.DocumentSource);
       end;
       CloseFile(Outfile);
     end;
@@ -693,8 +690,7 @@ end;
 procedure TMainForm.EditCopyItemClick(Sender: TObject);
 begin
   if PageControl.ActivePage = ResultsTab then
-    //Clipboard.AsText := StripHTML(HTMLViewer.DocumentSource)
-    Clipboard.AsText := StripHTML(Lines)
+    Clipboard.AsText := StripHTML(HTMLViewer.DocumentSource)
   else
     Chart.CopyToClipboardBitmap;
 end;
