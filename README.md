@@ -1,7 +1,7 @@
 # <img src="images\libro.png" alt="Libro" style="zoom:150%;"/> Libro
  A cross-platform program for statistical analysis of texts, using Shannon-Weaver information theory, Zipf power law function, and readability tests
 
-**Libro** is a cross-platform text analysis program written in Python and Free Pascal/Lazarus which scans a whole text file (in plain text, HTML, EPUB, or ODT formats) and ranks all used words according to frequency, performing a quantitative analysis of the text using Shannon-Weaver information statistic and Zipf power law function. It counts words, chars, spaces, and syllables. Also computes readability indexes (Gunning Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease).
+**Libro** is a cross-platform text analysis program written in Free Pascal/Lazarus which scans a whole text file (in plain text, HTML, EPUB, or RTF formats) and ranks all used words according to frequency, performing a quantitative analysis of the text using Shannon-Weaver information statistic and Zipf power law function. It counts words, chars, spaces, and syllables. Also computes readability indexes (Gunning Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease).
 
 **Statistics**
 
@@ -11,23 +11,14 @@
 
 ## **Remarks**
 
-- Other programs and web sites may give different numerical results for the same text that those computed by **Libro**. This occurs because they may use different formulae, but it is more likely that they use different rules for counting sentences or determining what is a syllable. Indeed, results for the same text may differ in **Libro** itself, if computed from source files in different formats (*eg.* plain text, HTML, EPUB, ODT). However, it is not the exact results themselves which are important, but the qualitative interpretations which may be derived from them, on a comparative basis.
-- Support for OpenOffice/LibreOffice format (ODT) is only available in the Python version.
-- The Pascal version only compiles under MS-Windows.
-- Thanks to **wp** from the Lazarus Forum for adding improvements to the code.
+- Other programs and web sites may give different numerical results for the same text that those computed by **Libro**. This occurs because they may use different formulae, but it is more likely that they use different rules for counting sentences or determining what is a syllable. Indeed, results for the same text may differ in **Libro** itself, if computed from source files in different formats (*eg.* plain text, HTML, EPUB, RTF). However, it is not the exact results themselves which are important, but the qualitative interpretations which may be derived from them, on a comparative basis.
+- Currently the program interface is available in English, Esperanto, French, German, Italian, Portuguese, Brazilian Portuguese, and Spanish.
+- Thanks to wp user from the Lazarus Forum and the ChatGPT and DeepSeek AI's for adding many improvements to the code.
 
-## **Requirements (Python version)**
-
-- [Python](http://www.python.org/) version 2.6 or later 
-- [PyQt4](http://www.riverbankcomputing.co.uk/software/pyqt/intro) version 4.8 or later 
-- [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) version 4.0 or later
-- [Matplotlib version 0.98](http://matplotlib.sourceforge.net/) or later
-
-## **Requirements (Free Pascal/Lazarus version)**
+## **Pascal/Lazarus version)**
 
 - [Free Pascal](http://www.freepascal.org/) version 3.0 or later
-- [Lazarus](http://www.lazarus.freepascal.org/) version 2.0 or later 
-- [Vector library](https://torry.net/files/vcl/science/vector/achvectors.zip) version 050702
+- [Lazarus](http://www.lazarus.freepascal.org/) version 3.0 or later 
 
 ## **Download**
 
@@ -39,13 +30,11 @@ This program is [free software](https://www.gnu.org/philosophy/free-sw.en.html),
 
 ------
 
-© 2013-2023 Mauro J. Cavalcanti, Rio de Janeiro, Brazil
+© 2013-2025 Mauro J. Cavalcanti, Rio de Janeiro, Brazil
 
 
 
-Sponsored by <img src="images\rizomaeditorial.png" alt="Rizoma Editorial"/>Rizoma Editorial
+Sponsored by <img src="images\logo_comciencia.png" alt="Rizoma Editorial"/>ComCiência Editorial
 
 Powered by <img src="images\powered-by.png" alt="Lazarus"/>Lazarus/Free Pascal
-
-Powered by <img src="images\python.png" alt="Python"/>Python <img src="images\pyqt.png" alt="PyQt"/>PyQt
 
