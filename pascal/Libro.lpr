@@ -5,11 +5,8 @@ program Libro;
 uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms,
-  tachartlazaruspkg,
-  printer4lazarus,
-  Main,
-  About { you can add units after this };
+  Forms, tachartlazaruspkg, printer4lazarus, Main, About, WordReader,
+  WordCounter, SyllableUtils, Convert { you can add units after this };
 
 {$R *.res}
 

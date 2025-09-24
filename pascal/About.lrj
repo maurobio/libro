@@ -2,13 +2,13 @@
 {"hash":4691652,"name":"taboutbox.caption","sourcebytes":[65,98,111,117,116],"value":"About"},
 {"hash":5437839,"name":"taboutbox.productname.caption","sourcebytes":[76,105,98,114,111],"value":"Libro"},
 {"hash":214540302,"name":"taboutbox.version.caption","sourcebytes":[86,101,114,115,105,111,110],"value":"Version"},
-{"hash":63390537,"name":"taboutbox.copyright.caption","sourcebytes":[40,99,41,32,50,48,49,51,45,50,48,50,51,32,77,97,117,114,111,32,74,46,32,67,97,118,97,108,99,97,110,116,105],"value":"(c) 2013-2023 Mauro J. Cavalcanti"},
+{"hash":63390025,"name":"taboutbox.copyright.caption","sourcebytes":[40,99,41,32,50,48,49,51,45,50,48,50,53,32,77,97,117,114,111,32,74,46,32,67,97,118,97,108,99,97,110,116,105],"value":"(c) 2013-2025 Mauro J. Cavalcanti"},
 {"hash":174341140,"name":"taboutbox.comments.caption","sourcebytes":[67,111,109,109,101,110,116],"value":"Comment"},
 {"hash":3347216,"name":"taboutbox.versionnumber.caption","sourcebytes":[48,46,48,46,48],"value":"0.0.0"},
 {"hash":21610,"name":"taboutbox.operatingsystem.caption","sourcebytes":[79,83,58],"value":"OS:"},
 {"hash":105317986,"name":"taboutbox.compiler.caption","sourcebytes":[67,111,109,112,105,108,101,114],"value":"Compiler"},
-{"hash":10026388,"name":"taboutbox.website.hint","sourcebytes":[104,116,116,112,58,47,47,108,105,98,114,101,106,111,46,115,111,117,114,99,101,102,111,114,103,101,46,110,101,116],"value":"http://librejo.sourceforge.net"},
+{"hash":148597316,"name":"taboutbox.website.hint","sourcebytes":[108,105,98,114,101,106,111,46,115,111,117,114,99,101,102,111,114,103,101,46,110,101,116],"value":"librejo.sourceforge.net"},
 {"hash":255857029,"name":"taboutbox.website.caption","sourcebytes":[76,105,98,114,111,32,119,101,98,115,105,116,101],"value":"Libro website"},
-{"hash":229570253,"name":"taboutbox.logo.hint","sourcebytes":[104,116,116,112,58,47,47,114,105,122,111,109,97,101,100,105,116,111,114,105,97,108,46,119,111,114,100,112,114,101,115,115,46,99,111,109],"value":"http://rizomaeditorial.wordpress.com"},
+{"hash":78110957,"name":"taboutbox.logo.hint","sourcebytes":[99,111,109,99,105,101,110,99,105,97,101,100,105,116,111,114,105,97,108,46,119,111,114,100,112,114,101,115,115,46,99,111,109],"value":"comcienciaeditorial.wordpress.com"},
 {"hash":1339,"name":"taboutbox.okbutton.caption","sourcebytes":[79,75],"value":"OK"}
 ]}

@@ -25,12 +25,11 @@ msgctxt "about.strwebsite"
 msgid "Libro website"
 msgstr ""
 
-#: main.strblankcount
+#: main.strblanklines
 msgid "Number of lines (without blanks):"
 msgstr ""
 
 #: main.strbottomtitle
-msgctxt "main.strbottomtitle"
 msgid "rank (log)"
 msgstr "rank (log)"
 
@@ -68,7 +67,6 @@ msgid "Invalid file type"
 msgstr "Invalid file type"
 
 #: main.strlefttitle
-msgctxt "main.strlefttitle"
 msgid "frequency (log)"
 msgstr "frequency (log)"
 
@@ -176,7 +174,7 @@ msgid "(c) 2013-2023 Mauro J. Cavalcanti"
 msgstr ""
 
 #: taboutbox.logo.hint
-msgid "rizomaeditorial.wordpress.com"
+msgid "http://rizomaeditorial.wordpress.com"
 msgstr ""
 
 #: taboutbox.okbutton.caption
@@ -207,13 +205,18 @@ msgid "Libro website"
 msgstr ""
 
 #: taboutbox.website.hint
-msgid "librejo.sourceforge.net"
+msgid "http://librejo.sourceforge.net"
 msgstr ""
 
 #: tmainform.caption
 msgctxt "tmainform.caption"
 msgid "Libro"
 msgstr "Libro"
+
+#: tmainform.coolbar.hint
+msgctxt "tmainform.coolbar.hint"
+msgid "|Ready"
+msgstr ""
 
 #: tmainform.copybtn.hint
 msgid "Copy|Copy results to the clipboard"
@@ -287,6 +290,11 @@ msgstr "About|Display information about the program"
 msgid "&Help"
 msgstr "&Help"
 
+#: tmainform.hint
+msgctxt "tmainform.hint"
+msgid "|Ready"
+msgstr ""
+
 #: tmainform.languageenglishitem.caption
 msgid "English"
 msgstr "English"
@@ -311,13 +319,18 @@ msgstr "PortuguÃªs"
 msgid "Exibir a interface em português"
 msgstr "Exibir a interface em português"
 
-#: tmainform.mnurecentfiles.caption
-msgid "&Recent files"
-msgstr ""
-
 #: tmainform.openbtn.hint
 msgid "Open|Open file"
 msgstr "Open|Open file"
+
+#: tmainform.opendialog.title
+msgid "Open existing file"
+msgstr "Open existing file"
+
+#: tmainform.pagecontrol.hint
+msgctxt "tmainform.pagecontrol.hint"
+msgid "|Ready"
+msgstr ""
 
 #: tmainform.plottab.caption
 msgid "Plot"
@@ -340,6 +353,12 @@ msgid "Save as"
 msgstr "Save as"
 
 #: tmainform.statusline.simpletext
+msgctxt "tmainform.statusline.simpletext"
 msgid "Ready"
 msgstr "Ready"
+
+#: tmainform.toolbar.hint
+msgctxt "tmainform.toolbar.hint"
+msgid "|Ready"
+msgstr ""
 

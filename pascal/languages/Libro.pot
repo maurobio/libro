@@ -15,25 +15,37 @@ msgctxt "about.strwebsite"
 msgid "Libro website"
 msgstr ""
 
+#: main.stralphanumchars
+msgid "Number of characters (alphanumeric): "
+msgstr ""
+
+#: main.strblanklinecount
+msgid "Number of blank lines: "
+msgstr ""
+
 #: main.strbottomtitle
 msgctxt "main.strbottomtitle"
 msgid "rank (log)"
 msgstr ""
 
 #: main.strcharsperword
-msgid "Average number of characters per word:"
+msgid "Average number of characters per word: "
 msgstr ""
 
 #: main.strcharttitle
 msgid "plot of word frequency"
 msgstr ""
 
+#: main.strcomplexwordcount
+msgid "Number of complex words (>=3 syllables): "
+msgstr ""
+
 #: main.strconfirmation
 msgid "Confirmation"
 msgstr ""
 
-#: main.strdiff
-msgid "Different words:"
+#: main.strcount
+msgid "Number of unique words: "
 msgstr ""
 
 #: main.strerror
@@ -48,37 +60,46 @@ msgstr ""
 msgid "Readability Indices"
 msgstr ""
 
-#: main.strinvalidfile
-msgid "Invalid file type"
-msgstr ""
-
 #: main.strlefttitle
 msgctxt "main.strlefttitle"
 msgid "frequency (log)"
 msgstr ""
 
-#: main.strletternumbercount
-msgid "Number of characters (alphanumeric):"
+#: main.strlinecount
+msgid "Number of lines (without blanks): "
 msgstr ""
 
-#: main.strnonspacecount
-msgid "Number of characters (without spaces):"
+#: main.strnonspacechars
+msgid "Number of characters (without spaces): "
+msgstr ""
+
+#: main.strnotavailable
+msgid "Not available for Esperanto"
 msgstr ""
 
 #: main.strnotfound
 msgid "File not found!"
 msgstr ""
 
-#: main.strnumchars
-msgid "Number of characters:"
+#: main.stronlyavailable
+msgctxt "main.stronlyavailable"
+msgid "Available only in English"
 msgstr ""
 
 #: main.stropentext
 msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub"
 msgstr ""
 
+#: main.strparagraphs
+msgid "Number of paragraphs: "
+msgstr ""
+
 #: main.strpercent
-msgid "% of different words:"
+msgid "% of unique words: "
+msgstr ""
+
+#: main.strprocessingmessage
+msgid "Analyzing document - "
 msgstr ""
 
 #: main.strquit
@@ -89,16 +110,21 @@ msgstr ""
 msgid "Rank"
 msgstr ""
 
+#: main.strreadymessage
+msgctxt "main.strreadymessage"
+msgid "Ready"
+msgstr ""
+
 #: main.strsaveimage
 msgid "JPEG files (*.jpg, *.jpeg)|*.jpg;*jpeg|PNG files (*.png)|*.png|Bitmap files (*.bmp)|*.bmp"
 msgstr ""
 
 #: main.strsavetext
-msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html"
+msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|CSV files (*.csv)|*.csv"
 msgstr ""
 
-#: main.strsentences
-msgid "Number of sentences:"
+#: main.strsentencecount
+msgid "Number of sentences: "
 msgstr ""
 
 #: main.strstatinfo
@@ -109,20 +135,24 @@ msgstr ""
 msgid "Text Statistics"
 msgstr ""
 
-#: main.strsyllables
-msgid "Number of syllables:"
+#: main.strsyllablecount
+msgid "Number of syllables: "
 msgstr ""
 
 #: main.strsyllablesperword
-msgid "Average number of syllables per word:"
+msgid "Average number of syllables per word: "
 msgstr ""
 
 #: main.strtitle
 msgid "Text Analysis of "
 msgstr ""
 
+#: main.strtotalchars
+msgid "Number of characters: "
+msgstr ""
+
 #: main.strtotalcount
-msgid "Number of words:"
+msgid "Number of words: "
 msgstr ""
 
 #: main.strword
@@ -130,7 +160,7 @@ msgid "Word"
 msgstr ""
 
 #: main.strwordspersentence
-msgid "Average number of words per sentence:"
+msgid "Average number of words per sentence: "
 msgstr ""
 
 #: taboutbox.caption
@@ -146,7 +176,11 @@ msgid "Compiler"
 msgstr ""
 
 #: taboutbox.copyright.caption
-msgid "(c) 2013-2019 Mauro J. Cavalcanti"
+msgid "(c) 2013-2025 Mauro J. Cavalcanti"
+msgstr ""
+
+#: taboutbox.logo.hint
+msgid "comcienciaeditorial.wordpress.com"
 msgstr ""
 
 #: taboutbox.okbutton.caption
@@ -173,6 +207,10 @@ msgstr ""
 #: taboutbox.website.caption
 msgctxt "taboutbox.website.caption"
 msgid "Libro website"
+msgstr ""
+
+#: taboutbox.website.hint
+msgid "librejo.sourceforge.net"
 msgstr ""
 
 #: tmainform.caption
@@ -230,14 +268,6 @@ msgstr ""
 msgid "Open and analyze a file"
 msgstr ""
 
-#: tmainform.fileprintitem.caption
-msgid "&Print..."
-msgstr ""
-
-#: tmainform.fileprintitem.hint
-msgid "Print results"
-msgstr ""
-
 #: tmainform.filesaveitem.caption
 msgid "Save &As..."
 msgstr ""
@@ -270,21 +300,70 @@ msgstr ""
 msgid "Show the interface in English"
 msgstr ""
 
+#: tmainform.languageesperantoitem.caption
+msgid "Esperanto"
+msgstr ""
+
+#: tmainform.languageesperantoitem.hint
+msgid "Montru la interfacon en Esperanto"
+msgstr ""
+
+#: tmainform.languagefrenchitem.caption
+msgid "Francês"
+msgstr ""
+
+#: tmainform.languagefrenchitem.hint
+msgid "Afficher l'interface en français"
+msgstr ""
+
+#: tmainform.languagegermanitem.caption
+msgid "Alemão"
+msgstr ""
+
+#: tmainform.languagegermanitem.hint
+msgid "Schnittstelle auf Deutsch anzeigen"
+msgstr ""
+
+#: tmainform.languageitalianitem.caption
+msgid "Italiano"
+msgstr ""
+
+#: tmainform.languageitalianitem.hint
+msgid "Mostra l'interfaccia in italiano"
+msgstr ""
+
 #: tmainform.languagemenu.caption
 msgid "&Language"
 msgstr ""
 
+#: tmainform.languageportuguesebrazilianitem.caption
+msgid "Português (Brasil)"
+msgstr ""
+
+#: tmainform.languageportuguesebrazilianitem.hint
+msgctxt "tmainform.languageportuguesebrazilianitem.hint"
+msgid "Exibir a interface em português do Brasil"
+msgstr ""
+
 #: tmainform.languageportugueseitem.caption
-msgid "Português"
+msgid "Português (Portugal)"
 msgstr ""
 
 #: tmainform.languageportugueseitem.hint
-msgid "Exibir a interface em português"
+msgid "Mostrar a interface em português de Portugal"
+msgstr ""
+
+#: tmainform.languagespanishitem.caption
+msgid "Espanhol"
+msgstr ""
+
+#: tmainform.languagespanishitem.hint
+msgid "Mostrar la interfaz en español"
 msgstr ""
 
 #: tmainform.mnurecentfiles.caption
 msgctxt "tmainform.mnurecentfiles.caption"
-msgid "Recently used"
+msgid "&Recent files"
 msgstr ""
 
 #: tmainform.openbtn.hint
@@ -312,6 +391,7 @@ msgid "Save as"
 msgstr ""
 
 #: tmainform.statusline.simpletext
+msgctxt "tmainform.statusline.simpletext"
 msgid "Ready"
 msgstr ""
 
