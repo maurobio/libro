@@ -1,7 +1,7 @@
 # <img src="images\libro.png" alt="Libro" style="zoom:150%;"/> Libro
  A cross-platform program for statistical analysis of texts, using Shannon-Weaver information theory, Zipf power law function, and readability tests
 
-**Libro** is a cross-platform text analysis program written in Free Pascal/Lazarus which scans a whole text file (in plain text, HTML, EPUB, or RTF formats) and ranks all used words according to frequency, performing a quantitative analysis of the text using Shannon-Weaver information statistic and Zipf power law function. It counts words, chars, spaces, and syllables. Also computes readability indexes (Gunning Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease).
+**Libro** is a cross-platform text analysis program written in Free Pascal/Lazarus which scans a whole text file (in plain text, HTML, EPUB, RTF, or ODT formats) and ranks all used words according to frequency, performing a quantitative analysis of the text using Shannon-Weaver information statistic and Zipf power law function. It counts words, chars, spaces, and syllables. Also computes readability indexes (Gunning Fog, Coleman-Liau, Automated Readability Index (ARI), SMOG grade, Flesch-Kincaid grade level and Flesch Reading Ease).
 
 **Statistics**
 
@@ -11,7 +11,7 @@
 
 ## **Remarks**
 
-- Other programs and web sites may give different numerical results for the same text that those computed by **Libro**. This occurs because they may use different formulae, but it is more likely that they use different rules for counting sentences or determining what is a syllable. Indeed, results for the same text may differ in **Libro** itself, if computed from source files in different formats (*eg.* plain text, HTML, EPUB, RTF). However, it is not the exact results themselves which are important, but the qualitative interpretations which may be derived from them, on a comparative basis.
+- Other programs and web sites may give different numerical results for the same text that those computed by **Libro**. This occurs because they may use different formulae, but it is more likely that they use different rules for counting sentences or determining what is a syllable. Indeed, results for the same text may differ in **Libro** itself, if computed from source files in different formats (plain text, HTML, EPUB, RTF, ODT). However, it is not the exact results themselves which are important, but the qualitative interpretations which may be derived from them, on a comparative basis.
 - Currently the program interface is available in English, Esperanto, French, German, Italian, Portuguese, Brazilian Portuguese, and Spanish.
 - Thanks to wp user from the Lazarus Forum and the ChatGPT and DeepSeek AI's for adding many improvements to the code.
 
