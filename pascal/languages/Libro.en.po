@@ -102,8 +102,10 @@ msgid "Available only in English"
 msgstr ""
 
 #: main.stropentext
+#, fuzzy
+#| msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub"
 msgctxt "main.stropentext"
-msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub"
+msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub|RTF files (*.rtf)|*.rtf|ODT files (*.odt)|*.odt"
 msgstr "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub"
 
 #: main.strparagraphs

@@ -101,8 +101,8 @@ msgstr "Disponibile solo in inglese"
 
 #: main.stropentext
 msgctxt "main.stropentext"
-msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub"
-msgstr "File di testo (*.txt)|*.txt|File HTML (*.htm *.html)|*.htm;*html|File EPUB (*.epub)|*.epub"
+msgid "Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub|RTF files (*.rtf)|*.rtf|ODT files (*.odt)|*.odt"
+msgstr "File di testo (*.txt)|*.txt|File HTML (*.htm *.html)|*.htm;*html|File EPUB (*.epub)|*.epub|File RTF (*.rtf)|*.rtf|File ODT (*.odt)|*.odt"
 
 #: main.strparagraphs
 msgid "Number of paragraphs: "

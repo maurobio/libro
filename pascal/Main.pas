@@ -168,7 +168,7 @@ resourcestring
   strStatInfo = 'Information Statistic';
   strIndexes = 'Readability Indices';
   strOpenText =
-    'Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub';
+    'Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|EPUB files (*.epub)|*.epub|RTF files (*.rtf)|*.rtf|ODT files (*.odt)|*.odt';
   strSaveText =
     'Text files (*.txt)|*.txt|HTML files (*.htm *.html)|*.htm;*html|CSV files (*.csv)|*.csv';
   strSaveImage =

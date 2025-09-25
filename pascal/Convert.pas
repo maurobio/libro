@@ -3,7 +3,7 @@ unit Convert;
 interface
 
 uses
-  Classes, SysUtils, {StrUtils,} FileUtil, Zipper;
+  Classes, SysUtils, {StrUtils,} FileUtil, Zipper, DOM, XMLRead;
 
 function ReadFile(const FileName: string): string;
 function StripHTML(const S: string): string;
@@ -11,6 +11,7 @@ function StripRTF(const rtf: string): string;
 function ConvertHtml(const fileName: string): string;
 function ConvertEpub(const fileName: string): string;
 function ConvertRtf(const fileName: string): string;
+function ConvertOdt(const fileName: string): string;
 
 implementation
 
@@ -192,6 +193,63 @@ begin
   CloseFile(OutFile);
 
   Result := fName;
+end;
+
+function ConvertOdt(const FileName: string): string;
+var
+  Unzipper: TUnZipper;
+  TempDir, ContentFile: string;
+  Doc: TXMLDocument;
+  Nodes: TDOMNodeList;
+  I: Integer;
+begin
+  Result := '';
+  // diretório temporário exclusivo
+  TempDir := GetTempDir(False) + 'odt_extract_' + IntToStr(Random(MaxInt)) + PathDelim;
+  ForceDirectories(TempDir);
+
+  Unzipper := TUnZipper.Create;
+  try
+    Unzipper.FileName := FileName;
+    Unzipper.OutputPath := TempDir;
+
+    // Extrai todo o conteúdo do ODT no diretório temporário
+    Unzipper.UnZipAllFiles;
+
+    // Procura content.xml no diretório temporário (normalmente está na raiz do zip)
+    ContentFile := TempDir + 'content.xml';
+    if not FileExists(ContentFile) then
+    begin
+      // caso raro: talvez o arquivo tenha sido extraído para subpastas - tentar localizar
+      if FindAllFiles(TempDir, 'content.xml', True).Count > 0 then
+        ContentFile := FindAllFiles(TempDir, 'content.xml', True).Strings[0]
+      else
+        raise Exception.Create('Arquivo content.xml não encontrado dentro do .odt');
+    end;
+
+    // lê o XML
+    ReadXMLFile(Doc, ContentFile);
+    try
+      // Extrai parágrafos e cabeçalhos
+      Nodes := Doc.GetElementsByTagName('text:p');
+      for I := 0 to Nodes.Count - 1 do
+        if Assigned(Nodes[I].FirstChild) then
+          Result := Result + Trim(Nodes[I].TextContent) + LineEnding;
+
+      Nodes := Doc.GetElementsByTagName('text:h');
+      for I := 0 to Nodes.Count - 1 do
+        if Assigned(Nodes[I].FirstChild) then
+          Result := Result + Trim(Nodes[I].TextContent) + LineEnding;
+    finally
+      Doc.Free;
+    end;
+
+  finally
+    Unzipper.Free;
+    // remove diretório temporário (recursivamente)
+    if DirectoryExists(TempDir) then
+      DeleteDirectory(TempDir, True); // precisa FileUtil
+  end;
 end;
 
 end.

@@ -21,8 +21,8 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="3"/>
-      <MinorVersionNr Value="6"/>
-      <BuildNr Value="1"/>
+      <MinorVersionNr Value="7"/>
+      <BuildNr Value="3"/>
       <StringTable Comments="Build configured for Win Linux and Darwin" CompanyName="Rizoma Editorial" FileDescription="A cross-platform program for statistical analysis of texts, using Shannon-Weaver information theory, Zipf power law function, and readability tests" InternalName="Libro" LegalCopyright="(c) 2013-2017 Mauro J. Cavalcanti" LegalTrademarks="GPL3" OriginalFilename="Libro" ProductName="Lazarus and Freepascal" ProductVersion="1.x and 3.x"/>
     </VersionInfo>
     <BuildModes Count="1">
